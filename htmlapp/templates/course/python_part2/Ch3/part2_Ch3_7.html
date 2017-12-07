@@ -1,0 +1,67 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元三：介紹假說檢定</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_1">產生排列樣本</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_2">想像排列樣本</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_3">生成複製樣本</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_4">在假設檢定之前的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_5">青蛙數據測試</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_6">一個樣本引導假說檢定</a></li>
+  <li class="breadcrumb-item">相同分佈的引導測試</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_8">雙樣本引導假設檢驗的手段差異</a></li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+         我們可以做兩個樣本測試。我們甚至可以測試我們用排列測試測試的相同假設：青蛙 <code>A</code> 和青蛙 <code>B</code> 具有相同分佈的衝擊力。要對具有 <code>n1</code>和 <code>n2</code> 個項目的兩個數組進行此測試，我們執行與排列檢定非常相似的過程。我們連接數組，從中生成引導測試，並將引導測試的第一個 <coden1條目作為屬於第一個數據集，最後一個 <code>n2</code> 屬於第二個。然後，我們計算測試統計量，例如平均值的差異，以獲得拔靴法的重複抽樣統計量。 <code>p</code> 值是測試統計量小於所觀察到的引導重複次數。
+    </p>
+    
+    <p>
+        現在，您將對使用平均值檢驗統計量差異青蛙 <code>A</code> 和青蛙 <code>B</code> 具有相同的衝擊力分佈的假設進行拔靴法測試。
+
+    </p>
+    
+    <p>
+        這兩個陣列可用作 <code>force_a</code> 和 <code>force_b</code> 。
+    </p>
+
+
+   {% endblock%}
+            {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_8" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_7" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">用已經寫好的 <code>diff_of_means（）</code> 函數計算觀察到的衝擊力差異。</li>
+
+      <li class="title-li">創建一個由 <code>force_a</code> 和 <code>force_b</code> 組成的陣列。</li>
+      
+      <li class="title-li">使用 <code>np.empty（）</code> 初始化 <code>bs_replicates</code> 陣列以儲存 <code>10,000</code> 個引導複製樣本。</li>
+
+      <li class="title-li">寫一個 <code>for</code> 循環</li>
+      <ul>
+            <li style="list-style-type:circle">從陣列中生成一個引導樣本。</li>
+            <li style="list-style-type:circle">計算拔靴法樣本的第一個 <code>len（force_a）</code> 最後 <code>len（force_b）</code> 條目之間的平均值差異。</li>
+      </ul>
+      
+      <li class="title-li">計算並打印引導樣本的 <code>p</code> 值。</li>
+
+       
+  {% endblock %}
+
+      {% block form %}
+      
+  <a href='/part2_Ch3_6'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+      
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part2_Ch3_8'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

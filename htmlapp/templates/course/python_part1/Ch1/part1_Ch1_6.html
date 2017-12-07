@@ -1,0 +1,68 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元一：探索數據圖形化分析</li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_1">繪製直方圖</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_2">直方圖x軸、y軸設定</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_3">調整直方圖</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_4">製作群蜂圖</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_5">編寫ECDF函數</a></li>
+  <li class="breadcrumb-item active">運用ECDF函數</li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_7">一次繪製三個物種的ECDF圖</a></li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+   <h2>用ECDF( )實際計算</h2>
+   <p>
+       使用 <code>ecdf( )</code> 函數計算 <code>安德森</code> 的鳶尾花花瓣長度的
+        <code>ECDF</code> 。 並將繪 <code>ECDF</code> 圖。
+   </p>
+    <h2>第六題:運用ECDF函數</h2>
+    <p>
+       計算 <code>versicolor(鳶尾花品種)</code> 長度的 <code>ECDF</code> 。
+    </p>
+    <p>
+       自訂 <code>x_vers</code> ， <code>y_vers</code> 變數，接收 <code>ECDF( )</code> 的回傳值，並利用這兩個變數繪製 <code>ECDF</code> 圖。
+    </p>
+
+   {% endblock%}
+{% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_7" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_6" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+      
+ {% block title2%}
+    <h2>說明</h2>
+ 
+        <li class="title-li">
+          把 <code>versicolor_petal_length</code> 帶入剛才寫好的 <code>ecdf( )</code> 做計算，並用 <code>x_vers, y_vers</code> 去接收它的回傳值。
+        </li>
+
+       <li class="title-li">
+           <code>plot</code> 函數用法， <code>_=plt.plot(X軸資料,Y軸資料,marker='.',
+           linestyle='none')</code> ，此為點狀表示、取消線條連接。
+       </li>
+       
+       <li class="title-li">
+           <code>plt.margins(0.02)</code> 可以設定 <code>外距</code> 為0.02，預防某些資料會被裁掉。
+       </li>
+       
+       <li class="title-li">
+           <code>X</code> 與 <code>Y</code> 的標記軸分別為 <code>versicolor_petal_length</code> 和 <code>ECDF</code> 。
+       </li>
+       
+       <li class="title-li">
+           畫完要用 <code>plt.show( )</code> 來顯示。
+       </li>
+
+  {% endblock %}
+
+     {% block form%}
+  <a href='/part1_Ch1_5'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+  <a href='/part1_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+  <a href='/part1_Ch1_7' ><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 下一題</button></a>
+     {% endblock %}

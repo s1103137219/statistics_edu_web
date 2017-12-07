@@ -1,0 +1,60 @@
+
+{% extends 'style/index_style.html' %}
+
+{% if request.user.is_authenticated %}
+{%else%}
+  {% block register %} 註冊{% endblock %}
+{%endif%}
+
+      {% block python1 %}
+      
+         <h2>Python程式入門(一)</h2>
+         
+         <p> 用 Python 從零開始學程式。</p>
+         
+        {% if request.user.is_authenticated %}
+      <p><a class="btn btn-info btn-lg" href="/setting" role="button">進入課程</a></p>
+      {% else %}
+      <p><a class="btn btn-info btn-lg" href="/login" role="button">進入課程</a></p>
+      {% endif %}
+      
+      {% endblock %}
+
+     {% block ps1 %}
+      
+      <h2>Python與統計(一)</h2>
+      
+      <p>用 Python 的 Pandas 和 Numpy 應用在統計中，並以圖表的套件來做應用統計。</p>
+      {% if request.user.is_authenticated %}
+      <p><a class="btn btn-info btn-lg" href="/setting" role="button">進入課程</a></p>
+      {% else %}
+      <p><a class="btn btn-info btn-lg" href="/login" role="button">進入課程</a></p>
+      {% endif %}
+     {% endblock %}
+    
+{% block python2 %}
+      
+      <h2>Python程式入門(二)</h2>
+      
+      <p> Python 較常用到的內建函數應用，以及函式與類別的介紹。 </p>
+      
+    {% if request.user.is_authenticated %}
+      <p><a class="btn btn-info btn-lg" href="/setting" role="button">進入課程</a></p>
+      {% else %}
+      <p><a class="btn btn-info btn-lg" href="/login" role="button">進入課程</a></p>
+      {% endif %}
+{% endblock %}
+
+    {% block ps2 %}
+      
+      <h2>Python與統計(二)</h2>
+      
+      <p>進一步的使用 Python 作統計分析。</p>
+      
+      {% if request.user.is_authenticated %}
+      <p><a class="btn btn-info btn-lg" href="/setting" role="button">進入課程</a></p>
+      {% else %}
+      <p><a class="btn btn-info btn-lg" href="/login" role="button">進入課程</a></p>
+      {% endif %}
+    
+    {% endblock %}

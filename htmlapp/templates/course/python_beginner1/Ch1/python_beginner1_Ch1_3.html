@@ -1,0 +1,55 @@
+{% extends 'style/beginner_course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元一：變數、型別</li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_1">型別辨識</a></li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_2">型別轉換</a></li>
+  <li class="breadcrumb-item active">List、Tuple</li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_4">Set、Dict</a></li>
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <h2>第三題:List、Tuple</h2>
+    <p>
+      <code>Python</code> 中並沒有陣列 <code>Array</code>，但是有類似陣列的存在：<code>List</code>、<code>Tuple</code>，
+      兩者皆能以一維、二維甚至三維來呈現，如果對維度沒有概念可以暫時參照 <code><a  target="_blank" href="https://zh.wikipedia.org/wiki/%E7%B6%AD%E5%BA%A6">維基</a></code>
+      在後續新出的課程我們會有題目讓使用者去熟悉維度，入門課程暫且不用有維度概念。
+      <br><code>List</code> 與 <code>Tuple</code> 宣告例子：<br>
+      <code>a = [ 1,2,3,4,5 ]</code>，這段為 <code>List</code> 的宣告，裡頭存放了 <code>1,2,3,4,5</code>，這些數值。
+      若將 <code>[ ]</code> 改為 <code>( )</code> 就是 <code>tuple</code> 的宣告了。
+    </p>
+    
+    <h2>練習</h2>
+    <p>
+      嘗試使用 <code>List</code>、<code>Tuple</code> 的宣告，並以 <code>list1</code>、<code>tuple1</code> 為變數存取
+      <code>'A'</code>、<code>'B'</code>、<code>'C'</code> 作為裡頭的元素，並以 <code>print( )</code> 輸出它們的 <code>'C'</code>。
+    </p>
+
+   {% endblock%}
+{% block comlen%} 
+   
+      <a href="/python_beginner{{part}}_Ch{{ch}}_4" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/python_beginner{{part}}_Ch{{ch}}_3" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">元素的位置是從 <code>0</code> 開始。</li>
+      <li class="title-li">如果要取出 <code>'A'</code> 會是 <code>list1[0]</code> 或是 <code>tuple1[0]</code> </li>
+
+      <li class="title-li">請以 <code>print( )</code> 作結果的輸出。</li>
+
+      
+  {% endblock %}
+
+      {% block form %}
+      <a href='/python_beginner{{part}}_Ch{{ch}}_2'><button type="button" class="btn btn-info"><span class="oi oi-chevron-left"></span> 上一題</button></a>
+
+  <a href='/python_beginner{{part}}_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/python_beginner{{part}}_Ch{{ch}}_4'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

@@ -1,0 +1,64 @@
+{% extends 'style/beginner_course_style.html' %}
+
+
+  {%block ol%}
+ <li class="breadcrumb-item">單元二：運算、判斷、迴圈</li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_1">運算式</a></li>
+  <li class="breadcrumb-item "><a href="/python_beginner{{part}}_Ch{{ch}}_2">判斷式(一)</a></li>
+    <li class="breadcrumb-item "><a href="/python_beginner{{part}}_Ch{{ch}}_3">判斷式(二)</a></li>
+
+    <li class="breadcrumb-item active">for 迴圈</li>
+    <li class="breadcrumb-item "><a href="/python_beginner{{part}}_Ch{{ch}}_5">while 迴圈</a></li>
+
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <h2>第四題:for 迴圈</h2>
+    <p>
+       迴圈是一個有開始跟結束的循環，只要到達條件，就會停止，以下面的例子為示範：
+       <pre class="code-text">
+for x in range(10):
+    print(x)
+      </pre>
+     
+     
+    </p>
+    
+    <p> 這段程式的解釋為變數 <code>x</code> 在 <code>10</code> 的範圍內做輸出，結果會為
+        <code>0,1,2,3,4,5,6,7,8,9</code>，因沒有設定從哪個值開始、加減多少值，故從 <code>0</code> 開始加 <code>1</code>
+      到 <code>10</code> 之前，如果真的要明確地寫會 <code>for x in range(起始,結束,加減值):</code> 
+      但如果條件下達方式不對，就會形成 <code><a  target="_blank" href="https://zh.wikipedia.org/wiki/%E7%84%A1%E7%AA%AE%E8%BF%B4%E5%9C%88">無窮迴圈</a></code>。
+    </p>
+    <h2>練習：</h2>
+    <p>
+      建立一個 <code>List</code> 為 <code> list1 = [6,7,2,1,5,7] </code> ，以 <code>for 迴圈</code>的方式跑出 <code>7,1,7</code> 這三個數字。
+    </p>
+   {% endblock%}
+
+{% block comlen%} 
+   
+      <a href="/python_beginner{{part}}_Ch{{ch}}_5" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/python_beginner{{part}}_Ch{{ch}}_4" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li"><code>List</code> 能在<code> for 迴圈</code> 中 <code>list1[x]</code> 的方式輸出</li>
+      <li class="title-li"> <code>7,1,7</code> 剛好是 <code>list1[1],list1[3],list1[5]</code> 那麼要加還是減就清楚了。</li>
+
+      <li class="title-li">請以 <code>print()</code> 作結果的輸出。</li>
+
+      
+  {% endblock %}
+
+      {% block form %}
+    <a href='/python_beginner{{part}}_Ch{{ch}}_3'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+
+  <a href='/python_beginner{{part}}_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/python_beginner{{part}}_Ch{{ch}}_5'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

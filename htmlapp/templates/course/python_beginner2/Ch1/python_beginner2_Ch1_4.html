@@ -1,0 +1,64 @@
+{% extends 'style/beginner_course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元一：功能編寫</li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_1">功能：判斷型別</a></li>
+  <li class="breadcrumb-item "><a href="/python_beginner{{part}}_Ch{{ch}}_2">List的特殊宣告(一)</a></li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_3">List的特殊宣告(二)</a></li>
+    <li class="breadcrumb-item active">功能：List相加</li>
+    <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_5">功能：計算變異數</a></li>
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <h2>第四題:功能：List相加</h2>
+     <p>
+       經過 <code><a href="/python_beginner{{part}}_Ch{{ch}}_2">List的特殊宣告(一)</a>、
+       <a href="/python_beginner{{part}}_Ch{{ch}}_3">List的特殊宣告(二)</a></code> 應該以對 <code>List</code> 有了了解，
+       我們曾在 <code><a href="/python_beginner{{part}}_Ch{{ch}}_1">功能：判斷型別</a></code> 提前過，
+       <code>def 名稱(x)</code> 裡頭的未知變數 <code>x</code> 是要放入相對應的資料型別的，
+       而未知變數其實是會依據功能裡頭運算，來判斷型別的，這也包括了 <code>List , Tuple , Dict , Set</code>。
+       <br>例如：
+<pre class="code-text">
+def test(x):
+    x[0]=x[1]+x[2]
+    return x
+t=[1,2,3]
+print(type(test(t)))
+</pre>
+    </p>
+    <p>
+        輸出結果會是 <code>&lt;class 'list'&gt;</code>。
+    </p>
+    <h2>練習</h2>
+    <p>
+       建立兩個 <code>List</code> 為 <code>list1=[1,2,3] , list2=[8,7,6]</code>，並編寫一個 <code>list_add</code> 的功能，
+       將 <code>list1 , list2</code> 做相加的動作，並以一個 <code>List</code> 變數 <code>ld</code> 做 <code>return</code> 當作運算結果。
+     </p>
+
+   {% endblock%}
+{% block comlen%} 
+   
+      <a href="/python_beginner{{part}}_Ch{{ch}}_5" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/python_beginner{{part}}_Ch{{ch}}_4" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+ {% block title2%}
+    <h2>說明</h2>
+ 
+           <li class="title-li">在 <code>def 名稱()</code> 的 <code>()</code> 裡頭先設置兩個未知變數</li>
+      <li class="title-li"> 運算完相加後，<code>return ld。</code> </li>
+      <li class="title-li">請以 <code>print( )</code> 作結果的輸出。</li>
+
+      
+  {% endblock %}
+
+      {% block form %}
+      <a href='/python_beginner{{part}}_Ch{{ch}}_3'><button type="button" class="btn btn-info"><span class="oi oi-chevron-left"></span> 上一題</button></a>
+
+  <a href='/python_beginner{{part}}_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/python_beginner{{part}}_Ch{{ch}}_5'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

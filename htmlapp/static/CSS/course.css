@@ -1,0 +1,166 @@
+body,html{
+  background:#78D6D2;
+  overflow-y: auto;
+}
+body,code{
+    
+font-family: Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei", "標楷體", DFKai-SB, sans-serif;
+}
+
+
+.title{
+    border-radius: 6px 6px 6px 6px;
+    margin:8px auto;
+    
+    width:95%;
+    background:#2F9E9A;
+    font-size: 20;
+    color:white;
+    overflow-y: auto;  
+}
+p,h2{
+ margin-left:20px;
+ margin-right:20px;
+ line-height: 40px;
+}
+.write{
+    border-radius: 6px 6px 6px 6px;
+    margin:8px auto;
+    width:95%;
+    background:#2F9E9A;
+    
+    
+    overflow-y: auto;  
+}
+.output li{
+    list-style-type:none;
+    display:inline;
+}
+pre {
+    margin:0;
+    width:100%;
+    
+    border: 0px;
+    
+    overflow-y: auto;
+    border-radius: 0px;
+    
+    
+    margin-top: -2px;
+    border-radius: 0px 4px 4px 4px;
+}
+.output{
+    border-radius: 0px 6px 6px 6px;
+    margin:auto;
+    
+    width:95%;
+    color:white;
+    margin-bottom: 10px;
+   line-height: 1.3;
+     
+    
+}
+.code{
+    border-radius: 0px 6px 6px 6px;
+    margin: auto;
+    width:95%;
+    color:white;
+    line-height: 1.3;
+}
+
+#editor{
+    height:400px;
+    
+}
+#ace-editor {
+    height:300px;
+    
+}
+#code{
+    color: white;
+    background-color: #272822;
+     border-radius: 4px 8px 0 0;
+     cursor: pointer; 
+    
+}
+#output{
+     background: #25282c;
+     cursor: pointer; 
+     border-radius: 4px 8px 0 0;
+     
+}
+#plot{
+    background: #25282c;
+    border-radius: 4px 8px 0 0;
+    cursor: pointer; 
+}
+#img{
+    background: #272822;
+    height: 300px;
+    display: none;
+    margin-top: -2;
+    overflow-y: auto;  
+}
+
+#funbtn{
+    border-radius: 6px 6px 6px 6px;
+    margin:8px auto;
+    width:95%;
+    overflow-y: auto;  
+
+}
+#funbtn button{
+    margin-top: 8px;
+    margin-left: 8px;
+    float:right;
+}
+#write{
+    height:550;
+}
+
+.breadcrumb{
+    margin:8px auto;
+
+    width:95%;
+}
+
+.title li {
+    border-radius: 6px 6px 6px 6px;
+    margin:8px auto;
+    margin-bottom:5px;
+   
+    width:95%;
+    background:#2F9E9A;
+    font-size: 20;
+    color:white;
+    line-height: 30px;
+}
+#p{
+    display: none;
+}
+code{
+        background-color:#ADEDEB;
+        color: #3a3a3a;
+        border-radius: 3px;
+}
+
+.bot-main span{
+    font-size:50;
+    
+}
+#err{
+
+    font-size: 2em;
+    line-height: 3;
+    letter-spacing: -1px;
+}
+img{
+    margin: auto;
+    display: block;
+}
+.loginout{
+    display: block;
+}
+.ace_line{
+    display: block;
+}

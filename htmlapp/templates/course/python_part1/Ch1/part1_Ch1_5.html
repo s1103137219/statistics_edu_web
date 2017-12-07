@@ -1,0 +1,66 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元一：探索數據圖形化分析</li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_1">繪製直方圖</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_2">直方圖x軸、y軸設定</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_3">調整直方圖</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_4">製作群蜂圖</a></li>
+  <li class="breadcrumb-item active">編寫ECDF函數</li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_6">運用ECDF函數</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_7">一次繪製三個物種的ECDF圖</a></li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+   <h2>ECDF(經驗累積機率分配函數)</h2>
+   <p>
+       將數據經過整理之後畫成圖表，便可粗略判斷資料的真實累積分配函數。
+       因此在本章，將練習到如何編寫 <code>ECDF</code> 函數來整理接收到的資料。
+   </p>
+    <h2>第五題:編寫ECDF函數</h2>
+    <p>
+        編寫一個函數 <code>ecdf(data)</code> ，傳回兩個值x和y 。
+        （ <code>x</code> 為x軸將接收到的 <code>data</code> 陣列由小到大排序， <code>y</code> 為 <code>ECDF</code> 的數據 <code>Y</code> 軸，<code>1/n</code> 以 <code>1</code> 等間距增加）
+    </p>
+    <p>
+        <code>numpy</code> 的 <code>sort</code> 可將資料做排序， <code>arange</code> 可以跑
+        自訂範圍類似 <code>for</code> 。
+    </p>
+
+   {% endblock%}
+{% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_6" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_5" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+      
+ {% block title2%}
+    <h2>說明</h2>
+ 
+        <li class="title-li">
+          變數 <code>n</code>，用 <code>len( )</code> 計算資料來源的數量。
+        </li>
+
+       <li class="title-li">
+           變數 <code>x</code>，用 <code>np.sort( )</code> 將資料由小到大排序。
+       </li>
+       
+       <li class="title-li">
+           變數 <code>y</code>，用 <code>np.arange( 起始值,終止值 )</code> ，可做到 <code>1/n</code> 以 <code>1</code> 等間距增加，
+           但記得 <code>arange</code> 的終止值會跑到 <code>n-1</code> ，所以終止值要設 <code>n+1</code> 。
+       </li>
+       
+       <li class="title-li">
+           最後這個 <code>ECDF</code> 函數記得要 <code>return x,y</code> ，才算是真正完成。
+       </li>
+
+  {% endblock %}
+
+     {% block form%}
+  <a href='/part1_Ch1_4'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+  <a href='/part1_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+  <a href='/part1_Ch1_6' ><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 下一題</button></a>
+     {% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元二：拔靴信賴區間</li>
+  <li class="breadcrumb-item">想像拔靴確認法樣本</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_2">生成許多拔靴確認法的樣本</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_3">拔靴確認法重複平均值和SEM</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_4">拔靴法的重複抽樣統計量與其他統計訊息</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_5">無安打比賽的信賴區間</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_6">一個功能來做成對的拔靴法抽樣</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_7">文盲/生育力數據成對的拔靴法抽樣</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_8">繪製拔靴法配適出來的回歸式</a></li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+        在本練習中，您將從 <code>1883年至2015</code> 年在英國 <code>Sheffield</code> 氣象台測量的一組年降雨量數據中生成引導樣本。數據以 <code>NumPy</code> 陣列降水為單位，以毫米（ <code>mm</code> ）為單位。 通過用 <code>ECDF</code> 圖形顯示引導樣本，可以了解引導抽樣如何允許數據的概率描述。
+    </p>
+
+   {% endblock%}
+         {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_2" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_1" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">寫一個 <code>for</code> 循環獲取降雨量數據的 <code>50</code> 拔靴確認法的樣本，並繪製他們的 <code>ECDF</code> 。</li>
+        <ul>
+            <li style="list-style-type:circle">使用 <code>np.random.choice（）</code> 從 <code>NumPy</code> 數組雨量中生成一個引導樣本。 確保重新採樣數組的大小是 <code>len（rainfall）</code> 。</li>
+            <li style="list-style-type:circle">使用您在本課程前言中編寫的 <code>ecdf（）</code> 函數為引導樣本 <code>bs_sample</code> 的 <code>ECDF</code> 生成 <code>x</code> 和 <code>y</code> 值。</li>
+            <li style="list-style-type:circle">繪製 <code>ECDF</code> 值。 除了 <code>marker ='。'</code> 之外，指定 <code>color ='gray'</code> （製作灰色點）和 <code>alpha = 0.1</code> （使它們變為半透明，因為我們覆蓋了這麼多）。 和 <code>linestyle ='none'</code> 關鍵字參數。</li>
+        </ul>
+
+       <li class="title-li">使用 <code>ecdf（）</code> 生成陣列降雨中原始降雨數據的 <code>ECDF</code> 的 <code>x</code> 和 <code>y</code> 值。</li>
+
+       <li class="title-li">繪製原始數據的 <code>ECDF</code> 值。</li>
+
+       <li class="title-li">點擊“執行”以顯示您的情節。</li>
+       
+  {% endblock %}
+
+      {% block form %}
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part2_Ch2_2'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

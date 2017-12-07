@@ -1,0 +1,53 @@
+{% extends 'style/beginner_course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元一：功能編寫</li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_1">功能：判斷型別</a></li>
+  <li class="breadcrumb-item "><a href="/python_beginner{{part}}_Ch{{ch}}_2">List的特殊宣告(一)</a></li>
+  <li class="breadcrumb-item active">List的特殊宣告(二)</li>
+    <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_4">功能：List相加</a></li>
+    <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_5">功能：計算變異數</a></li>
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <h2>第三題:List的特殊宣告(二)</h2>
+     <p>
+       若在剛剛的題目中，有在中途 <code>print()</code> 執行程式的話，或許已經理解了二維度的 <code>List</code>了。
+    </p>
+    <h2>練習</h2>
+    <p>
+       這次我們延續剛剛的那一題，一樣先建立 <code>list1=[ [0 for x in range(3)] for x in range(3) ]</code> 以及一個累加變數 <code>num = 0</code> 這次我們以
+       <code>for 迴圈</code> 來將放入 <code>list1</code> 中。
+     </p>
+
+   {% endblock%}
+{% block comlen%} 
+   
+      <a href="/python_beginner{{part}}_Ch{{ch}}_4" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/python_beginner{{part}}_Ch{{ch}}_3" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">一維度的 <code>List</code> 只需要以一個 <code>for 迴圈</code> 就能獨立讀取所有元素了，二維度則需要兩個 <code>for 迴圈</code> 如下方範例：
+<pre class="code-text">
+for i in range(3):
+    for j in range(3):
+</pre></li>
+      <li class="title-li">累加變數 <code>num</code> 需放入兩個 <code>for 迴圈</code> 中做 <code>num=num+1</code> 由 <code>0+1,1+1,2+1....8+1</code> 可以當作是三乘三而跑了九次的累加。</li>
+      <li class="title-li">請以 <code>print( )</code> 作結果的輸出。</li>
+
+      
+  {% endblock %}
+
+      {% block form %}
+      <a href='/python_beginner{{part}}_Ch{{ch}}_2'><button type="button" class="btn btn-info"><span class="oi oi-chevron-left"></span> 上一題</button></a>
+
+  <a href='/python_beginner{{part}}_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/python_beginner{{part}}_Ch{{ch}}_4'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

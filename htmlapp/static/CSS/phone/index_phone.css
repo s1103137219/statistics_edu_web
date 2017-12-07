@@ -1,0 +1,92 @@
+ @media all and (min-width: 300px) and (max-width: 400px) {
+    .btn{
+      
+      font-size: .1rem;
+    }
+.navbar{
+    color:white;
+    background-color:#168E89;
+    height:40;
+    width:100%;
+    margin: 0 auto;
+    position: sticky;
+    top: 0;
+    z-index: 1071;
+}
+.nav-link{
+    color:white;
+}
+.nav-item{
+    padding-right: .45rem;
+    padding-left: .85rem;
+}
+
+
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+
+}
+body,html{
+    overflow-y:auto;
+    height:100%;
+    width:100%;
+  background:#78D6D2;
+    
+}
+body{
+        font-size: .1em;
+       font-family:Microsoft JhengHei;
+}
+
+
+
+.jumbotron{
+    background:#78D6D2;
+    width: 45%;
+    margin:5px;
+    height: 30%;
+}
+
+.bot{
+    
+    width:100%;
+    height:auto;
+    background: #ADEDEB;
+    
+}
+.bot h2{
+  font-size: .5em;
+}
+.bot p{
+  
+}
+.mid{
+background:#fff url("http://burning-glass.com/wp-content/uploads/coding_screen_400x300-400x284.jpg") center center fixed no-repeat;
+background-size: cover;    
+font-size:60;
+    text-align: center;
+    width:100%;
+    height:58%;
+    overflow: hidden;
+}
+.mid h1{
+   line-height: 6;
+    
+    
+}
+.container{
+    display: flex;
+}
+#course{
+    float:right;
+    margin-bottom: 0;
+}
+.dropdown-menu{
+    background-color: #1c84c3;
+    
+}
+.dropdown-item{
+    color:white;
+}
+  }

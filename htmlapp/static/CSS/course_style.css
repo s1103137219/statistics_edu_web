@@ -1,0 +1,77 @@
+   #draggable{
+        z-index: 1070;
+        color:white;
+        background-color: #2F9E9A;
+        border-radius: 6px 6px 6px 6px;
+        overflow-y:visible;
+        width:45%;
+        margin-left:37px;
+        font-size:20px;
+    }
+    #draggablespan{
+        margin-left:5px;
+        margin-top:-3px;
+    }
+    #draggable span{
+        font-size:25px;
+    }
+#promptbtn{
+    height:38px;
+    border-radius: 6px 6px 0px 0px;
+
+}
+
+    hr {
+    margin-top: 0.1rem;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+
+}
+.comlen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    overflow: auto;
+    background: rgba(0,0,0,.5);
+    overflow: hidden;
+}
+.comlen-min{
+   background:rgba(22, 142, 137, 0);
+   color:white;
+   font-size:40px;
+   border-radius: .25rem;
+   width:50%;
+   height:45%;
+   display: table;
+   margin:auto;
+   margin-top:10%;
+       line-height: 3;
+}
+.comlen-min span,button{
+    margin:auto;
+    display: inherit;
+    
+}
+.comlen-min .btn{
+    margin:auto;
+    margin-left: 2%;
+}
+.comlen-bottom{
+    margin-left:30%;
+}
+.code-help{
+    color: white;
+    background: #2F9E9A;
+    width: 100%;
+    padding:0px;
+}
+.code-text{
+    color: white;
+    background: #009688;
+    width: 30%;
+    padding: 8px 12px;
+    margin-left:10%;
+}

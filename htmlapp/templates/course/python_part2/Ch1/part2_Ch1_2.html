@@ -1,0 +1,54 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元一：透過優化的參數估計</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_1">我們多久可以看到一場無安打比賽？</a></li>
+  <li class="breadcrumb-item active">數據吻合我們的情境嗎？</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_3">這個參數如何最優？</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_4">識字/生育的探索式資料分析(EDA)</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_5">線性回歸</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_6">如何最佳？</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_7">對適當的Anscombe數據進行線性回歸</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_8">對所有Anscombe數據進行線性回歸</a></li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+        您已經使用指數分配無安打比賽並創建真實數據的 <code>ECDF</code> 。從數據中用 <code>ECDF</code> 覆蓋理論 <code>CDF</code> 。這有助於您驗證指數分佈描述觀察到的數據。
+    </p>
+   
+    <p>
+        可能有助於提醒自己在上一課程中創建用來計算 <code>ECDF</code> 的函數，以及您編寫的代碼來繪製它。
+    </p>
+
+   {% endblock%}
+   {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_3" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_2" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">從無安打比賽（ <code>nohitter_times</code> ）之間的實際時間計算 <code>ECDF</code> 。 使用您在之前課程中編寫的 <code>ecdf（）</code> 函數。</li>
+
+       <li class="title-li">根據您在上一個練習中進行的理論樣本創建一個 <code>CDF</code> 。</li>
+
+       <li class="title-li">使用 <code>plt.plot（）</code> 將 <code>x_theor</code> 和 <code>y_theor</code> 繪製為一條線。 然後覆蓋真實數據 <code>x</code> 和 <code>y</code> 的 <code>ECDF</code> 作為點。 要做到這一點，你必須指定關鍵字參數 <code>marker ='。'</code>  和 <code>linestyle ='none'</code> 除了在 <code>plt.plot（）</code> 中的 <code>x</code> 和 <code>y</code> 。</li>
+
+       <li class="title-li">在圖上設置 <code>2％</code> 的臨界值。</li>
+       
+       <li class="title-li">顯示你的圖。</code> </li>
+  {% endblock %}
+
+      {% block form %}
+      <a href='/part2_Ch1_1'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+      
+      <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+      
+      <a href='/part2_Ch1_3'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+      {% endblock %} 

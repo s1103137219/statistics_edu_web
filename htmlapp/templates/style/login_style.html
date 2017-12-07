@@ -1,0 +1,18 @@
+
+      {% if request.user.is_authenticated %}
+      <li class="nav-item btn-group dropdown">
+        <button class="nav-link btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="oi oi-people">  {{request.user}}  </span>
+  </button>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+         <a class="dropdown-item" href='/logout' >登出</a>
+         <a class="dropdown-item" href="/user">個人資料</a>
+         <a class="dropdown-item" href="/change_password">修改密碼</a>
+        </div>
+      </li>
+      
+      {% else %}
+      <a href='/login' class="nav-link">
+      {% load static %}
+     <span class="oi oi-account-login"></span> {% block logout %}{% endblock %} 登入</span> 
+      </a>{% endif %}

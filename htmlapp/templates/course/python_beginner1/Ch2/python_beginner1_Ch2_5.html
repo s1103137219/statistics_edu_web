@@ -1,0 +1,63 @@
+{% extends 'style/beginner_course_style.html' %}
+
+
+  {%block ol%}
+ <li class="breadcrumb-item">單元二：運算、判斷、迴圈</li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_1">運算式</a></li>
+  <li class="breadcrumb-item "><a href="/python_beginner{{part}}_Ch{{ch}}_2">判斷式(一)</a></li>
+    <li class="breadcrumb-item "><a href="/python_beginner{{part}}_Ch{{ch}}_3">判斷式(二)</a></li>
+
+    <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_4">for 迴圈</a></li>
+    <li class="breadcrumb-item active">while 迴圈</li>
+
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <h2>第五題:while 迴圈</h2>
+    <p>
+       上一節介紹了 <code>for 迴圈</code>，這次則是要來說明第二種迴圈：<code>while 迴圈</code>，它不同於 <code>for 迴圈</code>
+       能以判斷式的方式執行迴圈，以下面的例子來說：
+    </p>
+    <pre class="code-text">
+a=0
+b=7
+while a < b:
+    a=a+1
+    print(a)
+    </pre>
+<p>
+  當 <code> a < b </code> 的時候，執行 <code> a = a + 1 </code> ，直到 <code>a</code> 不再小於 <code>b</code> 之後就會結束，
+  就是說這裡的 <code>a</code> 是開始，而 <code>a</code> 不小於 <code>b</code> 時就是結束。<br>雖然以這例子來說，它似乎跟 <code>for 迴圈</code>
+  差不多，但不同的點在於可以在 <code> a < b</code> 加些 <code>and , or</code> 來更符合想要下的條件。
+</p>    
+    <h2>練習：</h2>
+    <p>
+      以上面的例子為練習，建立 <code>a = 0 , b = 7</code> 取出不超過 <code>7</code> 的 <code>2</code> 的倍數。  
+    </p>
+   {% endblock%}
+
+{% block comlen%} 
+   
+      <a href="/setting" class="btn btn-info btn-lg">返回設定</a>
+      <a href="/python_beginner{{part}}_Ch{{ch}}_5" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">在 <code>while 迴圈</code> 中，直到不符合條件才會結束，故沒有其他條件處理會超出 <code>7</code>。</li>
+
+      <li class="title-li">請以 <code>print()</code> 作結果的輸出。</li>
+
+      
+  {% endblock %}
+
+      {% block form %}
+    <a href='/python_beginner{{part}}_Ch{{ch}}_4'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+
+  <a href='/python_beginner{{part}}_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+    {% endblock %} 

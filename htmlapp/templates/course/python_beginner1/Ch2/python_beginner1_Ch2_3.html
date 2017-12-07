@@ -1,0 +1,60 @@
+{% extends 'style/beginner_course_style.html' %}
+
+
+  {%block ol%}
+ <li class="breadcrumb-item">單元二：運算、判斷、迴圈</li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_1">運算式</a></li>
+  <li class="breadcrumb-item "><a href="/python_beginner{{part}}_Ch{{ch}}_2">判斷式(一)</a></li>
+    <li class="breadcrumb-item active">判斷式(二)</li>
+  <li class="breadcrumb-item "><a href="/python_beginner{{part}}_Ch{{ch}}_4">for 迴圈</a></li>
+    <li class="breadcrumb-item "><a href="/python_beginner{{part}}_Ch{{ch}}_5">while 迴圈</a></li>
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <h2>第三題:判斷式(二)</h2>
+    <p>
+      剛剛在上節提到了 <code>and、or、not</code>，但並未提及它們的用法。 </p>
+     <p> <code>and</code> 是判斷條件上是否皆成立。
+     <br> 例如：<code>a < b and a > 3</code> 如果 <code> a = 4 ,b = 5</code> 這項條件就是成立，輸出的結果將會是
+      <code>True(正確)</code> 但如果，<code> a = 3 </code>， <code>a > 3</code>並不成立，輸出結果則是 <code>False(錯誤)</code></p>
+      <p> <code>or</code> 判斷條件上是否有一方成立，只要一方條件達到就是 <code>True(正確)</code>
+      除非沒有一個條件成立，才會是 <code>False(錯誤)</code>。</p>
+      <p><code>not</code> 它比較像是反判斷，以 <code>and</code> 的例子來說，<br>如果 <code> a = 4 ,b = 5</code> 同樣的 <code>a < b and a > 3</code>，如果在開頭加上 <code>not</code>
+      那 <code>and</code> 的結果就會反過來變為 <code>False(錯誤)</code>，反之 <code> a = 3 </code> 的結果就會是 <code>False(錯誤)</code>。
+      <br>它們同樣可以用於 <code>if...else...</code> 裡頭，有時也會以 <code>( )</code> 的方式來做更細微的判斷。</p>
+   
+    
+    <h2>練習：</h2>
+    <p>
+       建立四個變數 <code> num1 = '5.5' , num2 = '6' , num3 = 'a' , num4 = 9</code> 請判斷 <code>num2</code> 是否大於 <code>num4</code> 還大於<code>num3 + num1</code>
+       ，如果條件成立， <code>print( )</code> 輸出正確或不正確。
+    </p>
+
+   {% endblock%}
+{% block comlen%} 
+   
+      <a href="/python_beginner{{part}}_Ch{{ch}}_4" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/python_beginner{{part}}_Ch{{ch}}_3" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">使用 <code>if...else...</code> </li>
+      <li class="title-li">依照題目的判斷使用 <code>and , or ,not , > , < </code> </li>
+            <li class="title-li">請記得要有四個空白，這樣 <code>Python</code> 才會辨別變數有在 <code>if...else...</code> 裡頭。</li>
+
+      <li class="title-li">請以 <code>print( )</code> 作結果的輸出。</li>
+
+      
+  {% endblock %}
+
+      {% block form %}
+        <a href='/python_beginner{{part}}_Ch{{ch}}_3'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+
+  <a href='/python_beginner{{part}}_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/python_beginner{{part}}_Ch{{ch}}_4'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

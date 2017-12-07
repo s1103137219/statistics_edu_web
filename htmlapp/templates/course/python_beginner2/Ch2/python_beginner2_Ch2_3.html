@@ -1,0 +1,70 @@
+{% extends 'style/beginner_course_style.html' %}
+
+
+  {%block ol%}
+ <li class="breadcrumb-item">單元二：類別、套件使用</li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_1">類別</a></li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_2">如何使用函式庫</a></li>
+  <li class="breadcrumb-item active">Pandas</li>
+ 
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <h2>第三題:Pandas</h2>
+     <p>
+        因這裡是入門課程，故我們並不會太過深入的介紹。
+        <br><code>Pandas</code> 有相當強大的功能，它的主要結構 <code>Series</code> 與 <code>DataFrame</code> 能讓人可以以類似
+        表格的方式來看資料，還能夠開啟 <code>csv , excel</code> ，這兩類檔案只是其中之一，這裡我們只練習如何形成 <code>DataFrame</code>。
+        <code>DataFrame</code> 例子：
+        <pre class="code-text">
+import pandas as pd
+data={"數學成績":[30,40,44,80,100,77,65],
+      "國文成績":[60,77,80,74,90,100,75]}
+num=[1,2,3,4,5,6,7]
+df=pd.DataFrame(data,index=num)
+print(df)</pre>
+    </p>
+    <p>
+        在上面的例子，我們引入了 <code>Pandas</code> ，建立了一個 <code>dict</code> 的變數 <code>data</code> 作為資料，
+        <code>num</code> 則是作為編號使用，接著以 <code>df</code> 存取資料，輸出之後的結果：
+<pre class="code-text">
+  國文成績  數學成績
+1     60    30
+2     77    40
+3     80    44
+4     74    80
+5     90   100
+6    100    77
+7     75    65
+</pre>    
+    </p>
+    <h2>練習</h2>
+    <p>
+        建立一個 <code>dict</code> 嘗試建立 <code>DataFrame</code>。
+     </p>
+
+   {% endblock%}
+{% block comlen%} 
+   
+      <a href="/setting" class="btn btn-info btn-lg">返回設定</a>
+      <a href="/python_beginner{{part}}_Ch{{ch}}_3" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">先引用 <code>Pandas</code>。</li>
+      <li class="title-li">建立一個 <code>dict</code> 放入 <code>DataFrame</code>中。</li>
+      <li class="title-li">請以 <code>print( )</code> 作結果的輸出。</li>
+
+      
+  {% endblock %}
+
+      {% block form %}
+      <a href='/python_beginner{{part}}_Ch{{ch}}_2'><button type="button" class="btn btn-info"><span class="oi oi-chevron-left"></span> 上一題</button></a>
+
+  <a href='/python_beginner{{part}}_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+    {% endblock %} 

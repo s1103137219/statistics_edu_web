@@ -1,0 +1,69 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元一：探索數據圖形化分析</li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_1">繪製直方圖</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_2">直方圖x軸、y軸設定</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_3">調整直方圖</a></li>
+  <li class="breadcrumb-item active">製作群蜂圖</li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_5">編寫ECDF函數</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_6">運用ECDF函數</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_7">一次繪製三個物種的ECDF圖</a></li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+   <h2>繪製群蜂圖</h2>
+   <p>
+       本節的練習將使用到植物學家 <code>愛德華．安德森</code> 所收集的資料集，
+       製作鳶尾花花瓣長度的 <code>群蜂圖</code> 。
+   </p>
+    <h2>第四題:製作群蜂圖</h2>
+    <p>
+        變數 <code>df_bee</code> 為數據資料存入 <code>DataFrame</code> 。
+    </p>
+    <p>
+        利用 <code>seaborn</code> 套件中的 <code>swarmplot</code> 製作一個鳶尾花
+        花瓣長度的群蜂圖。 <code>x軸</code> 應包含三種物種， <code>y軸</code> 應為花瓣長度。
+    </p>
+
+   {% endblock%}
+{% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_5" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_4" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+      
+ {% block title2%}
+    <h2>說明</h2>
+ 
+        <li class="title-li">
+          使用 <code>print(df.head( ))</code> 會看到
+          存在變數 <code>df_bee</code> 的數據資料有哪些欄位。
+          便可知道X軸與Y軸該帶那些 <code>欄位</code> 的資料
+          ，在使用 <code>sns.swarmplot( )</code> 時，方能依要求能帶入。
+        </li>
+
+
+       <li class="title-li">使用 <code>sns.swarmplot( )</code> 時，要放上 <code>X軸</code> 與 <code>Y軸</code> 
+           資料來源的欄位名稱，及 <code>data</code> 的來源。 <code>_=sns.swarmplot(x='species',y='petal
+           length (cm)',data=df)</code> 。
+       </li>
+       
+       <li class="title-li">
+           X軸與Y軸的名稱分別為 <code>species</code> 和 <code>petal length (cm)</code> 。
+       </li>
+       
+       <li class="title-li">
+           畫完要用 <code>plt.show( )</code> 來顯示。
+       </li>
+
+  {% endblock %}
+
+     {% block form%}
+  <a href='/part1_Ch1_3'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+  <a href='/part1_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+  <a href='/part1_Ch1_5' ><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 下一題</button></a>
+     {% endblock %}

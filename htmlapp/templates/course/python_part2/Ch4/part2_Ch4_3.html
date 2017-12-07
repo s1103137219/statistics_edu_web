@@ -1,0 +1,54 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元四：假設檢定的例子</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch4_1">1964年“民權法案”投票</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch4_2">網站上的模擬時間</a></li>
+  <li class="breadcrumb-item">皮爾遜相關假設檢驗</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch4_4">新菸鹼類殺蟲劑有意想不到的後果？</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch4_5">對於精子計數的拔靴假設檢驗</a></li>
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+    女性文盲與生育率之間的相關性可能只是偶然的;一個國家的生育率實際上完全可以獨立於其文盲。你會測試這個假設。要做到這一點，要改變文盲價值觀，但要保持生育價值觀。這模擬了他們完全獨立的假設。對於每個排列，計算 <code>Pearson</code> 相關係數，並評估您的排列重複數量中有多少 <code>Pearson</code> 相關係數大於觀察者的 <code>Pearson</code> 相關係數。
+    </p>
+    <p>
+     在本課程前編寫的計算 <code>Pearson</code> 相關係數的函數 <code>pearson_r（）</code> 已經在你的名字空間。
+     </p>
+
+   {% endblock%}
+               {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_4" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_3" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+       <li class="title-li">計算觀察到的文盲 <code>（illiteracy）</code> 與生育力 <code>（fertility）</code> 之間的 <code>Pearson</code> 相關性。</li>
+
+       <li class="title-li">初始化一個陣列來儲存你的排列複製品。</li>
+
+       <li class="title-li">寫一個 <code>for</code> 循環來繪製 <code>10,000</code> 個重複：</li>
+        <ul>
+            <li style="list-style-type:circle">使用 <code>np.random.permutation（）</code> 對文盲測量進行排序。</li>
+            <li style="list-style-type:circle">計算排列的文盲數，文盲率和生育率之間的 <code>Pearson</code> 相關性。</li>
+        </ul>
+       
+       <li class="title-li">計算並印出重複項的 <code>p</code> 值。</li>
+       
+  {% endblock %}
+
+      {% block form %}
+  <a href='/part2_Ch4_2'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+      
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part2_Ch4_4'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

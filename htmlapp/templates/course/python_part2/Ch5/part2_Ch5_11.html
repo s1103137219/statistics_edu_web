@@ -1,0 +1,58 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元五：一個案例研究</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_1">達爾文雀科喙深度的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_2">喙深度的ECDF</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_3">喙深度的參數估計</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_4">假設檢定：2012年喙是否更深？</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_5">喙長度和深度的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_6">線性回歸</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_7">顯示線性回歸結果</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_8">喙長與深度比</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_9">遺傳力的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_10">後代與父母數據的關聯</a></li>
+  <li class="breadcrumb-item">Pearson相關的後代和父母的數據</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_12">測量遺傳力</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_13">在G. scandens中，深的喙會遺傳嗎？</a></li>
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+     <code>Pearson</code> 相關係數似乎是一個有用的衡量指標，父母的喙深度是由他們的後代繼承而來的。 計算 <code>G. scandens</code> 的親本和後代喙深度之間的 <code>Pearson</code> 相關係數。 對於 <code>G. fortis</code> 也一樣。 然後，使用您在上一個練習中寫的函數，使用配對引導計算 <code>95％</code> 信賴區間。
+    </p>
+    <p>
+    請注意，數據存儲在 <code>bd_parent_scandens</code> ， <code>bd_offspring_scandens</code> ， <code>bd_parent_fortis</code> 和 <code>bd_offspring_fortis</code> 中。
+    </p>
+
+   {% endblock%}
+                     {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_12" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_11" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+       <li class="title-li">使用您在本課程前言中編寫的 <code>pearson_r（）</code> 函數來計算 <code>G. scandens</code> 和 <code>G. fortis</code> 的 <code>Pearson</code> 相關係數。</li>
+
+       <li class="title-li">使用在上一個練習中針對 <code>G. scandens</code> 和 <code>G. fortis</code> 所寫的 <code>draw_bs_pairs（）</code> 函數來獲取 <code>Pearson</code> 相關係數的 <code>1000</code> 對拔靴複製品。</li>
+       
+       <li class="title-li">使用 <code>np.percentile</code> 計算兩者的 <code>95％</code> 信賴區間，並印出結果。</li>
+ 
+  {% endblock %}
+
+      {% block form %}
+      
+ <a href='/part2_Ch5_10'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+        
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part2_Ch5_12'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

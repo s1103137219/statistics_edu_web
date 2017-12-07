@@ -1,0 +1,66 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元二：拔靴信賴區間</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_1">想像拔靴確認法樣本</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_2">生成許多拔靴確認法的樣本</a></li>
+  <li class="breadcrumb-item">拔靴確認法重複平均值和SEM</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_4">拔靴法的重複抽樣統計量與其他統計訊息</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_5">無安打比賽的信賴區間</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_6">一個功能來做成對的拔靴法抽樣</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_7">文盲/生育力數據成對的拔靴法抽樣</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_8">繪製拔靴法配適出來的回歸式</a></li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+        在這個練習中，您將計算謝菲爾德氣象站平均年降水量概率分佈函數的 <code>bootstrap estimate</code> 。記住，如果謝菲爾德氣象台可以一再從 <code>1883年到2015</code> 年重複所有測量，我們估計將會獲得平均年降雨量。這是平均值的概率估計。您將繪製 <code>PDF</code> 作為直方圖然後看到它是普通的。
+    </p>
+    
+    <p>
+       實際上，從理論上可以看出，在不太限制的條件下，平均值將始終是常態分佈的。 （這一般不適用於平均值和其他統計數據）。這種分佈的標準偏差（稱為平均值的標準誤差或 <code>SEM</code> ）由數據的標準差除以平方根數據點的數量。即，對於數據集， <code>sem = np.std（data）/ np.sqrt（len（data））</code> 。使用黑客統計數據，您可以獲得相同的結果，而不需要取得它，但是您將從您的引導重複驗證此結果。
+
+    </p>
+    <p>
+        數據集已經預先加載到一個叫做 <code>rainfall</code> 的陣列中。
+    </p>
+
+
+   {% endblock%}
+         {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_4" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_3" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+    <li class="title-li">使用 <code>draw_bs_reps（）</code> 函數和降雨量數組，繪製 <code>10000</code> 次年平均降雨量的拔靴確認法的樣本。 提示：通過 <code>np.mean</code> 獲取函數來計算平均值。</li>
+        <ul>
+            <li style="list-style-type:circle">提醒一下， <code>draw_bs_reps（）</code> 接受3個參數： <code>data</code> ， <code>func</code> 和 <code>size</code> 。</li>
+        </ul>
+        
+    <li class="title-li">計算和印出降雨量的標準差。</li>
+        <ul>
+            <li style="list-style-type:circle">計算這個的公式是 <code>np.std（data）/ np.sqrt（len（data））</code> 。</li>
+        </ul>
+        
+    <li class="title-li">計算並印出拔靴確認法的樣本 <code>bs_replicates</code> 的標準差。</li>
+    
+    <li class="title-li">使用 <code>normed = True</code> 關鍵字參數和 <code>50</code> 個分檔製作複製的直方圖。</li>
+    
+    <li class="title-li">點擊“執行”以顯示您的情節。</li>
+
+  {% endblock %}
+
+      {% block form %}
+       <a href='/part2_Ch2_2'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+       
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part2_Ch2_4'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

@@ -1,0 +1,58 @@
+{% extends 'style/beginner_course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元一：變數、型別</li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_1">型別辨識</a></li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_2">型別轉換</a></li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_3">List、Tuple</a></li>
+  <li class="breadcrumb-item active">Set、Dict</li>
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <h2>第四題:Dict、Set</h2>
+    <p>
+       關於 <code>Dict</code>、<code>Set</code>，它們都是以 <code>{ }</code> 宣告，但是不同之處在於 <code>Dict</code> 
+       有 <code>Key</code> 以及 <code>Value</code> ，用法與 <code>Json</code> 檔案類似
+       ，它能夠依照存在的 <code>Key</code> 去找到相對應的 <code>Value</code> ，它也能夠將 <code>List</code> 以及 <code>Tuple</code> 變成自己的型別。<br>
+       例子：
+       <br> <code>c ={ 1:"name" , 2:"id" }</code>，用 <code>print( c[1] )</code> 輸出的答案會是 <code>name</code>。<br>
+       
+       而 <code>Set</code> 就只是單純的集合，
+       如果使用 <code>set( 'adc' )</code> 它就會以 <code>{'a', 'd', 'c'}</code> 將字隔開，
+       並且將重複的字移除，像 <code>set( 'addcc' )</code> 裡頭 <code>c、d</code> 重複了，但結果也只會出現一次 變為
+       <code>{ 'a', 'd', 'c' }</code> 。但用到 <code>Set</code> 
+       的機會不多，反而是 <code>dict</code>、<code>List</code> 以及 <code>Tuple</code> 較常出現。 
+       
+    </p>
+    <h2>練習</h2>
+    <p>
+       請先宣告 <code>a = 'Pyython'</code>、<code>b = [ [1,"t"],[2,"e"] ]</code>
+       ，將 <code>a</code>、<code>b</code> 分別轉為 <code>Set</code>、<code>Dict</code>。
+    </p>
+
+   {% endblock%}
+{% block comlen%} 
+   
+      <a href="/python_beginner{{part}}_Ch2_synopsis" class="btn btn-info btn-lg">進入下一課</a>
+      <a href="/python_beginner{{part}}_Ch{{ch}}_4" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">轉換型別的方式為 <code>set()</code>、<code>dict()</code></li>
+      <li class="title-li">請以 <code>print()</code> 作結果的輸出。</li>
+
+      
+  {% endblock %}
+
+      {% block form %}
+    <a href='/python_beginner{{part}}_Ch{{ch}}_3'><button type="button" class="btn btn-info"><span class="oi oi-chevron-left"></span> 上一題</button></a>
+
+  <a href='/python_beginner{{part}}_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+    <a href='/python_beginner{{part}}_Ch2_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+
+    {% endblock %} 

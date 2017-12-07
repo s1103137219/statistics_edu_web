@@ -1,0 +1,55 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元五：一個案例研究</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_1">達爾文雀科喙深度的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_2">喙深度的ECDF</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_3">喙深度的參數估計</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_4">假設檢定：2012年喙是否更深？</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_5">喙長度和深度的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_6">線性回歸</a></li>
+  <li class="breadcrumb-item">顯示線性回歸結果</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_8">喙長與深度比</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_9">遺傳力的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_10">後代與父母數據的關聯</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_11">Pearson相關的後代和父母的數據</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_12">測量遺傳力</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_13">在G. scandens中，深的喙會遺傳嗎？</a></li>
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+    現在，您將在散點圖上顯示線性回歸結果，其代碼已經從您以前的練習中預先寫入。 為此，將前 <code>100</code> 個引導樣本（儲存在 <code>bs_slope_reps_1975</code> ， <code>bs_intercept_reps_1975</code> ， <code>bs_slope_reps_2012</code> 和 <code>bs_intercept_reps_2012</code> 中），並將帶有 <code>alpha = 0.2</code> 和 <code>linewidth = 0.5</code> 關鍵字參數的行繪製到 <code>plt.plot（）</code> 。
+    </p>
+
+   {% endblock%}
+                     {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_8" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_7" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+       <li class="title-li">使用 <code>np.array（）</code> 生成拔靴法的 <code>x</code> 值。 它們應該由 <code>10</code> 毫米和 <code>17</code> 毫米組成。</li>
+
+       <li class="title-li">寫一個 <code>for</code> 循環來繪製 <code>1975</code> 年和 <code>2012</code> 年的數據集的引導線的 <code>100</code> 個。  <code>1975</code> 年數據集應該是“藍色”，而 <code>2012</code> 年數據集應該是“紅色”。</li>
+
+       <li class="title-li">點擊“執行”來看圖！</li>
+ 
+  {% endblock %}
+
+      {% block form %}
+      
+ <a href='/part2_Ch5_6'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+        
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part2_Ch5_8'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

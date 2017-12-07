@@ -1,0 +1,61 @@
+{% extends 'style/beginner_course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元一：功能編寫</li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_1">功能：判斷型別</a></li>
+  <li class="breadcrumb-item active">List的特殊宣告(一)</li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_3">List的特殊宣告(二)</a></li>
+    <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_4">功能：List相加</a></li>
+    <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_5">功能：計算變異數</a></li>
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+   <h2>第二題:List的特殊宣告</h2>
+   <p>
+       剛剛練習了簡單的編寫功能，這次我們來讓 <code>List</code> 裡頭的元素相加，先看以下的 <code>List</code> 宣告：
+<pre class="code-text">
+list1=[0 for x in range(3)]
+</pre>
+   </p>
+   <p>
+    裡頭的宣告，先建立了一個元素 <code>0</code> 接著再以 <code>for 迴圈</code> 來敘述要建立三個同樣的元素，也就是說 
+    <code>0</code> 按照了 <code>for 迴圈</code> 的範圍，建立了自己 <code>0,1,2</code> 位置的元素。
+    不過是只是一維度的宣告，若要使用二維度會是這樣：<code>list1=[ [0 for x in range(3)] for x in range(3) ] </code>，
+    這樣的輸出結果會是 <code>[[0,0,0],[0,0,0],[0,0,0]]</code>，先建立了三個 <code>0</code> 的元素後，第二迴圈在這三個 <code>0</code>
+    的外頭又跑了一次 <code>0,1,2</code> 建立了三次 <code>[0,0,0]</code>，這跟一開始了宣告一樣，只是又包覆了一層 <code>[]</code>而已。
+    </p>
+    <h2>練習</h2>
+    <p>
+       建立一個二維度的 <code>list1=[ [0 for x in range(3)] for x in range(3) ]</code> 接著請分別將 <code>1,2,3,4,5,6,7,8,9</code>
+       加入至 <code>list1</code> 的位置。
+     </p>
+
+   {% endblock%}
+   
+{% block comlen%} 
+   
+      <a href="/python_beginner{{part}}_Ch{{ch}}_3" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/python_beginner{{part}}_Ch{{ch}}_2" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+ 
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">一維度的 <code>List</code> 能以 <code>list1[0]</code> 尋找第一個數字的位置，
+      二維度須以 <code>list1[0][0]</code> 才能捕捉到最裡頭的第一個位置。</li>
+      <li class="title-li">此題先禁止使用 <code>for 迴圈</code> 作答。</li>
+
+      <li class="title-li">請以 <code>print()</code> 作結果的輸出。</li>
+
+      
+  {% endblock %}
+
+      {% block form %}
+  <a href='/python_beginner{{part}}_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/python_beginner{{part}}_Ch{{ch}}_3'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

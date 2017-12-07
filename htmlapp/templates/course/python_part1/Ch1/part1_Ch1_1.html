@@ -1,0 +1,55 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元一：探索數據圖形化分析</li>
+  <li class="breadcrumb-item active">繪製直方圖</li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_2">直方圖x軸、y軸設定</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_3">調整直方圖</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_4">製作群蜂圖</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_5">編寫ECDF函數</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_6">運用ECDF函數</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_7">一次繪製三個物種的ECDF圖</a></li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+   <h2>繪製鳶尾花數據</h2>
+   <p>本節的練習將使用到植物學家 <code>愛德華．安德森</code> 所收集的資料集，
+      這些資料集中有三種不同種類的鳶尾花，分別為 <code>山鳶尾(Iris setosa)</code> 、
+       <code>鳶尾屬(Iris Irisic Iris)</code> 、 <code>維吉尼亞鳶尾(Iris Virginica)</code> 等花瓣長度。
+   </p>
+    <h2>第一題:繪製直方圖</h2>
+    <p>利用 <code>matplotlib.pyplot</code> 繪圖套件、 <code>seaborn</code> 加強圖表視覺化套件，繪製50個樣本的花瓣長度的直方圖，存放資料的變數為
+     <code>versicolor_petal_length</code> 。
+    </p>
+    <p>
+        將套件引入時，應該使用 <code>import</code> ，例如： <code>import matplotlib.pyplot as plt</code> ，至於後面的 <code>as</code> 
+        是將引入的套件取個變數名稱，方便後續重複使用時無須再打全名。
+    </p>
+
+   {% endblock%}
+   
+{% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_2" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_1" class="btn btn-info btn-lg">再練習一次</a>
+    
+{% endblock %}
+      
+ {% block title2%}
+    <h2>說明</h2>
+      <li class="title-li" >import <code>matplotlib.pyplot</code> 套件和 <code>seaborn</code> 套件(通常會將他們的變數名稱取 <code>plt</code> 和 <code>sns</code> )。</li>
+
+       <li class="title-li">使用 <code>seaborn</code> 設定繪製條件。</li>
+
+       <li class="title-li">繪製直方圖可以使用 <code>plt.hist( )</code> ，裡面放資料來源 <code>versicolor_petal_length</code> 。</li>
+
+       <li class="title-li">顯示出直方圖使用到 <code>plt.show( )</code> 。</li>
+  {% endblock %}
+
+      {% block form %}
+  <a href='/part1_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part1_Ch1_2'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

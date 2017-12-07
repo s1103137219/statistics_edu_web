@@ -1,0 +1,58 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元五：一個案例研究</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_1">達爾文雀科喙深度的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_2">喙深度的ECDF</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_3">喙深度的參數估計</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_4">假設檢定：2012年喙是否更深？</a></li>
+  <li class="breadcrumb-item">喙長度和深度的EDA</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_6">線性回歸</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_7">顯示線性回歸結果</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_8">喙長與深度比</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_9">遺傳力的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_10">後代與父母數據的關聯</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_11">Pearson相關的後代和父母的數據</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_12">測量遺傳力</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_13">在G. scandens中，深的喙會遺傳嗎？</a></li>
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+    喙長度數據以 <code>bl_1975</code> 和 <code>bl_2012</code> 存儲，單位為毫米（ <code>mm</code> ）。 您將喙深度數據存儲在 <code>bd_1975</code> 和 <code>bd_2012</code> 中。 為 <code>1975</code> 年和 <code>2012</code> 年的樣本製作喙深度（ <code>y</code> 軸）與喙長度（ <code>x</code> 軸）的散點圖。
+    </p>
+
+
+   {% endblock%}
+                     {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_6" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_5" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+       <li class="title-li">製作 <code>1975</code> 年數據的點散圖。 使用 <code>color ='blue'</code> 關鍵字參數。 如果數據點重疊，也可以使用 <code>alpha = 0.5</code> 關鍵字參數。</li>
+
+       <li class="title-li">對 <code>2012</code> 年的數據做同樣的事情，但是使用 <code>color ='red'</code> 關鍵字參數。</li>
+
+       <li class="title-li">添加圖例並標記軸。</li>
+       
+       <li class="title-li">顯示你的圖。</li>
+ 
+  {% endblock %}
+
+      {% block form %}
+      
+ <a href='/part2_Ch5_4'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+        
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part2_Ch5_6'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

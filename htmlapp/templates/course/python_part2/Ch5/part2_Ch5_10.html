@@ -1,0 +1,56 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元五：一個案例研究</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_1">達爾文雀科喙深度的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_2">喙深度的ECDF</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_3">喙深度的參數估計</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_4">假設檢定：2012年喙是否更深？</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_5">喙長度和深度的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_6">線性回歸</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_7">顯示線性回歸結果</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_8">喙長與深度比</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_9">遺傳力的EDA</a></li>
+  <li class="breadcrumb-item">後代與父母數據的關聯</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_11">Pearson相關的後代和父母的數據</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_12">測量遺傳力</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_13">在G. scandens中，深的喙會遺傳嗎？</a></li>
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+    為了量化後代與父母喙深度之間的相關性，我們想計算父母與後代之間的統計學，如 <code>Pearson</code> 相關係數。 為了獲得信賴區間，我們需要做一個成對的拔靴法抽樣。
+    </p>
+    <p>
+    您已經編寫了一個函數來進行成對的拔靴法抽樣，以獲得從線性回歸派生參數的估計。 您在本練習中的任務是修改該函數以創建一個新的函數，該函數使用 <code>draw_bs_pairs（x，y，func，size = 1）</code> 來執行配對引導，並由 <code>func（bs_x，bs_y）</code> 定義的對樣本計算單個統計信息）。 在下一個練習中，您將使用 <code>pearson_r</code> 進行 <code>func</code> 。
+    </p>
+
+   {% endblock%}
+                     {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_11" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_10" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+
+ {% block title2%}
+    <h2>說明</h2>
+
+       <li class="title-li">使用原始 <code>draw_bs_pairs_linreg（）</code> 函數（名為 <code>draw_bs_pairs（）</code> 。 修改此函數以使 <code>draw_bs_pairs（）</code> 函數如上所述。 一定要適當地調整文檔字符串，並記住，在這個修改過的函數中，只需要返回一個統計量。</li>
+
+       <li class="title-li">需要注意的是：修改後的函數需要一個額外的 <code>func</code> 參數，並且只返回 <code>bs_replicates</code> ，而 <code>bs_slope_reps</code> 和 <code>bs_intercept_reps</code> 則是代碼中的函數。</li>
+ 
+  {% endblock %}
+
+      {% block form %}
+      
+ <a href='/part2_Ch5_9'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+        
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part2_Ch5_11'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

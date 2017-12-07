@@ -1,0 +1,51 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元一：探索數據圖形化分析</li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_1">繪製直方圖</a></li>
+  <li class="breadcrumb-item active">直方圖x軸、y軸設定</li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_3">調整直方圖</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_4">製作群蜂圖</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_5">編寫ECDF函數</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_6">運用ECDF函數</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_7">一次繪製三個物種的ECDF圖</a></li>
+
+  {% endblock  %}
+ {% block title1 %}
+   <h2>繪製鳶尾花數據</h2>
+   <p>本節的練習將使用到植物學家 <code>愛德華．安德森</code> 所收集的資料集，
+      這些資料集中有三種不同種類的鳶尾花，分別為 <code>山鳶尾(Iris setosa)</code> 、
+       <code>鳶尾屬(Iris Irisic Iris)</code> 、 <code>維吉尼亞鳶尾(Iris Virginica)</code> 等花瓣長度。
+   </p>
+   <h2>第二題:直方圖的x軸、y軸設定</h2>
+    <p>使用 <code>plt.xlabel( )</code> 、 <code>plt.ylabel( )</code> 添加圖表的 <code>x軸</code> 、 <code>y軸</code> 
+       並將這兩句存至 <code>_</code> 變數中。
+    </p>
+    <p>
+        <code>matplotlib.pyplot</code> 與 <code>seaborn</code> 可使用自訂變數名稱( <code>plt</code> 、 <code>sns</code> )導入。
+    </p>
+ {% endblock%}
+
+{% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_3" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_2" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+      
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">基本上<code>X軸</code>與<code>Y軸</code>都是放上名稱與它的單位。
+      本題分別放上<code>'petal length (cm)'</code>、<code>'count'</code>。</li>
+
+       <li class="title-li">顯示出直方圖使用到<code>plt.show( )</code>。</li>
+  {% endblock %}
+
+     {% block form%}
+  <a href='/part1_Ch1_1'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+  <a href='/part1_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+  <a href='/part1_Ch1_3' ><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 下一題</button></a>
+     {% endblock %}

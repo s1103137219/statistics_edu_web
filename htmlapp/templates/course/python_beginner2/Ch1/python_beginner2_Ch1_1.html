@@ -1,0 +1,69 @@
+{% extends 'style/beginner_course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元一：功能編寫</li>
+  <li class="breadcrumb-item active">功能：判斷型別</li>
+  <li class="breadcrumb-item "><a href="/python_beginner{{part}}_Ch{{ch}}_2">List的特殊宣告(一)</a></li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_3">List的特殊宣告(二)</a></li>
+    <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_4">功能：List相加</a></li>
+    <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_5">功能：計算變異數</a></li>
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+   <h2>第一題:功能：判斷型別</h2>
+   <p>
+       這裡稱做的功能，其實就是指 <code><a target="_blank" href="https://zh.wikipedia.org/wiki/%E5%AD%90%E7%A8%8B%E5%BA%8F" >副程式(或稱子程式)</a></code>
+       ，大多數編程人員都稱它為 <code>函數(或函式)</code> ，但在這請先把它當作是程式的某項功能來看待就好。<br>
+       <code>Python</code> 的功能開頭是由 <code>def 名稱():</code> 為起頭的，裡頭的 <code>()</code> 可能會有我們所要運算的值，
+       以下面的例子來看：
+       <pre class="code-text">
+def factorial(x):
+    for i in range(x-1 , 1 ,-1):
+        x=x*i
+    return x
+z=6
+print(factorial(z))   
+        </pre>
+   </p>
+   <p>
+    建立一個讀取各個數字的階層功能，功能的名稱為 <code>factorial</code>，而它 <code>()</code> 可以放入一個未知的數字 <code>x</code>   
+    ，而裡頭的 <code>for 迴圈</code> 所做的事情就是算出未知的數字 <code>x</code> 的階層，之後將未知的數字 <code>x</code> 作為結果回傳。<br>
+    (假設要算出 <code>5!</code> 階層是以 <code>5*4*3*2*1</code> 這樣的方式，故從 <code>x-1</code> 開始做相乘)
+    <br> 在功能外直接讓 <code> z=6 </code> 接著直接輸出 <code>factorial(z)</code> ，這裡請注意一點 <code>()</code> 裡頭
+    是放入相對應的資料型別的變數，並不是一定要放入叫做 <code>x</code> 的變數。
+    </p>
+    <h2>練習</h2>
+    <p>
+        先做簡單的練習，建立一個功能名稱為 <code>ty</code>，判別未知變數的資料型別 (<code>str , bool , int ,float</code>)。
+        <br>建立變數 <code>a = 5 , b = 5.5 , c = "st" , d = False</code> 以 <code>print()</code> 輸出被功能包覆的 <code>a,b,c,d</code> 結果。
+     </p>
+
+   {% endblock%}
+   
+{% block comlen%} 
+   
+      <a href="/python_beginner{{part}}_Ch{{ch}}_2" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/python_beginner{{part}}_Ch{{ch}}_1" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+ 
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">在 <code>def 名稱()</code> 的 <code>()</code> 裡頭先設置一個未知變數，名稱則取代為 <code>ty</code>。</li>
+      <li class="title-li">使用 <code>if...else...</code>判斷，如果等於 <code>str , bool , int ,float</code> 
+      回傳(<code>return</code>) 字串、布林、整數、float，如：<code>type(x) == str</code> 便 <code>return "字串"</code>。</li>
+
+      <li class="title-li">請以 <code>print()</code> 作結果的輸出。</li>
+
+      
+  {% endblock %}
+
+      {% block form %}
+  <a href='/python_beginner{{part}}_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/python_beginner{{part}}_Ch{{ch}}_2'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

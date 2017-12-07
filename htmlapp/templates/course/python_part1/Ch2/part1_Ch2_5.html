@@ -1,0 +1,61 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元二：了解數據圖形化分析</li>
+  <li class="breadcrumb-item active"><a href="/part1_Ch2_1">計算平均</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch2_2">計算百分位數</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch2_3">繪製ECDF:比較百分位數</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch2_4">繪製盒鬚圖</a></li>
+  <li class="breadcrumb-item">計算變異數</li>
+  <li class="breadcrumb-item"><a href="/part1_Ch2_6">計算標準差與變異數</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch2_7">繪製散佈圖</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch2_8">計算共變異數</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch2_9">計算皮爾生相關係數</a></li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+   <h2>變異數</h2>
+    <p>
+        了解經常使用的功能是相當重要的，或許您知道該怎麼計算變異數，但這門課程是以初學為前提開設的。
+
+    </p>
+
+    <h2>第五題:計算變異數</h2>
+    <p>
+        這次的練習，將先以明確的過程計算完變異數之後，再使用 <code>np.var()</code> 計算，查看兩者之間有沒有差異。
+    </p>
+
+   {% endblock%}
+{% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_6" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_5" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+ {% block title2%}
+    <h2>說明</h2>
+ 
+       <li class="title-li">建立differences 變數，存取變色鳶尾長度的平均差，變數 <code>versicolor_petal_length</code> 
+         在這個題目上可以使用。</li>
+
+       <li class="title-li">將存放至變數 <code>differences</code> 陣列的數值進行平方，如： <code>x**2</code> ，並建立變數 <code>diff_sq</code> 來存放
+       。</li>
+       
+       <li class="title-li">計算 <code>diff_sq</code> 的平均，並建立一個變數 <code>variance_explicit</code> 來存放。</li>
+       
+       <li class="title-li">使用 <code>np.var()</code> 來直接計算 <code>versicolor_petal_length</code> 的變異數，並建立一個變數
+       <code>variance_np</code> 來存放。</li>
+       
+       <li class="title-li">輸出 <code>variance_explicit</code> 與 <code>variance_np</code> 來比較兩個方法是否一致。</li>
+
+  {% endblock %}
+
+      {% block form %}
+  <a href='/part1_Ch2_4'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+
+  <a href='/part1_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 回課綱</button></a>
+
+  <a href='/part1_Ch2_6'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 下一題</button></a>
+    {% endblock %} 

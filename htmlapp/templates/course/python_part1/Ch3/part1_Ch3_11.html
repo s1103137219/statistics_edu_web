@@ -1,0 +1,59 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元三：離散隨機變數與連續隨機變數</li>
+  <li class="breadcrumb-item active"><a href="/part1_Ch3_1">產生隨機數</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_2">隨機數與伯努利試驗</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_3">有多少人會拖欠借款？</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_4">銀行是否會虧損</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_5">二項分配抽樣</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_6">用直方圖繪製二項分佈的PMF(機率質量函數)</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_7">二項式與帕松分佈之間的關係</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_8">2015年的棒球數據是否異常？</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_9">常態分佈的PDF</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_10">常態分佈CDF</a></li>
+  <li class="breadcrumb-item">貝爾蒙特賽馬結果為常態分配？</li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_12">打破Secretaria紀錄的機會有多少？</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_13">根據不同事件，創作一個自訂函數</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_14">無安打比賽和完全打擊的指數分配</a></li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+
+
+    <h2>第十一題:貝爾蒙特賽馬結果為常態分配？</h2>
+    <p>
+        自 <code>1926</code> 年以來，貝爾蒙特賽馬是一個 <code>1.5</code> 英里長的 <code>3</code> 歲的純種馬種族組成。 <code>Secretariat</code> (馬名)在 <code>1973</code> 年跑的最快，
+        而 <code>1970</code> 年，由於異常潮濕和惡劣的條件，跑的速度是生涯中最慢的。將這兩個異常值從數據集中刪除，計算賽馬
+        獲勝者時間的平均值和標準差。使用 <code>np.random.normal()</code> 函數以平均值和標準差從常態分佈中取樣，並繪製一
+        個 <code>CDF</code> 。將獲勝的時期覆蓋 <code>ECDF</code> 。這些是否接近常態分佈？
+    </p>
+   {% endblock%}
+{% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_12" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_11" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+ {% block title2%}
+    <h2>說明</h2>
+ 
+       <li class="title-li">變數 <code>belmont_no_outliers</code> 已存入貝爾蒙特獲獎者的數據資料，並刪除極端異常值。計算平均值和標準差。</li>
+
+       <li class="title-li">使用平均值和標準偏差，從常態分佈 <code>np.random.normal()</code> 中取出 <code>10,000</code> 個樣品，結果存入變數 <code>sample</code> 。</li>
+       
+       <li class="title-li">計算 <code>CDF</code> 理論樣本和貝爾蒙特獲獎者的數據的 <code>ECDF</code> ，結果分別分配給 <code>x_theor, y_theor</code> 和 <code>x, y</code> 。</li>
+       
+       <li class="title-li">繪製圖形，將貝爾蒙特獲獎者的數據以點狀表示;圖形邊界設為 <code>0.02</code> ， <code>X,Y標軸</code> 分別加上 <code>Belmont winning time (sec.)</code> 與 <code>CDF</code> 。</li>
+       
+  {% endblock %}
+
+      {% block form %}
+  <a href='/part1_Ch3_10'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+
+  <a href='/part1_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 回課綱</button></a>
+
+  <a href='/part1_Ch3_12'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 下一題</button></a>
+    {% endblock %} 

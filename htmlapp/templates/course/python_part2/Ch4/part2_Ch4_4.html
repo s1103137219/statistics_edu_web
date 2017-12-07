@@ -1,0 +1,51 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元四：假設檢定的例子</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch4_1">1964年“民權法案”投票</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch4_2">網站上的模擬時間</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch4_3">皮爾遜相關假設檢驗</a></li>
+  <li class="breadcrumb-item">新菸鹼類殺蟲劑有意想不到的後果？</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch4_5">對於精子計數的拔靴假設檢驗</a></li>
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+    作為假設檢驗的最後一個練習，在我們將所有內容放在下一章的案例研究中之前，您將研究新菸鹼類殺蟲劑對蜜蜂繁殖的影響。這些殺蟲劑在美國非常廣泛地用於防治蚜蟲和其他害蟲損害植物。
+    </p>
+    <p>
+     在最近的一項研究中， <code>Straub, et al. (Proc. Roy. Soc. B, 2016)</code>  研究了新菸鹼對授粉蜜蜂精子的影響。在這個和下一個練習中，你將研究殺蟲劑處理影響每半毫升精液的活精子計數。
+     </p>
+    <p>
+     首先，我們將照常做 <code>EDA</code> 。繪製未經處理的蜜蜂（存儲在 <code>Numpy</code> 陣列對照中 <code>control</code> ）的活精子計數的 <code>ECDF</code> 和用農藥處理的蜜蜂（存儲在處理的 <code>Numpy</code> 陣列中  <code>treated</code> ）。
+     </p>
+
+   {% endblock%}
+               {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_5" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_4" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+       <li class="title-li">使用 <code>ecdf（）</code> 函數從控制和處理的陣列中生成 <code>x</code> ， <code>y</code> 值來繪製 <code>ECDF</code> 。</li>
+
+       <li class="title-li">繪製 <code>ECDF</code> 在同一個圖。</li>
+
+       <li class="title-li">點擊“執行”查看結果！</li>
+     
+  {% endblock %}
+
+      {% block form %}
+  <a href='/part2_Ch4_3'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+      
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part2_Ch4_5'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

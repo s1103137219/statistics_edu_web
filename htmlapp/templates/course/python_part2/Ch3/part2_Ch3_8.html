@@ -1,0 +1,62 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元三：介紹假說檢定</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_1">產生排列樣本</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_2">想像排列樣本</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_3">生成複製樣本</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_4">在假設檢定之前的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_5">青蛙數據測試</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_6">一個樣本引導假說檢定</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_8">相同分佈的引導測試</a></li>
+  <li class="breadcrumb-item">雙樣本引導假設檢驗的手段差異</li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+         你執行了一個樣本引導假設檢驗，這是不能給與排列。測試兩個樣本具有相同分佈的假設可以通過引導測試來完成，但優選排列測試，因為它更準確（實際上確切）。但其中就是置換測試的極限。它不是很通用。我們現在想測試青蛙 <code>A</code> 和青蛙 <code>B</code> 具有相同平均衝擊力但不一定相同分佈的假說。這也是不可能的排列測試。
+    </p>
+    
+    <p>
+        要進行雙樣本引導測試，我們將兩個數組移動到具有相同的平均值，因為我們正在模擬他們的手段實際上相等的假設。然後我們從移位的數組中繪出引導樣本，併計算均值的差異。這構成了一個拔靴法重複抽樣，而我們生成了許多。  <code>p</code> 值是重複的分數，其平均值大於或等於觀察值。
+    </p>
+    
+    <p>
+         <code>forces_concat</code> 和 <code>empirical_diff_means</code> 已經在你的空間中。
+    </p>
+
+
+   {% endblock%}
+            {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch4_synopsis" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_8" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">使用 <code>np.mean（）</code> 計算所有衝擊力的平均值（來自 <code>force_concat</code> ）。</li>
+
+      <li class="title-li">為 <code>force_a</code> 和 <code>force_b</code> 生成移位的數據集，使得每個數據的平均值是連接的衝擊力陣列的平均值。</li>
+      
+      <li class="title-li">為兩個移位數組生成平均值的 <code>10,000</code> 次複製樣本。</li>
+
+      <li class="title-li">通過從青蛙 <code>A</code> 中減去青蛙 <code>B</code> 的移動衝擊力的複制來計算平均差異的拔靴法複製品。</li>
+      
+      <li class="title-li">計算並打印複製的 <code>p</code> 值。</li>
+
+       
+  {% endblock %}
+
+      {% block form %}
+      
+  <a href='/part2_Ch3_7'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+   <a href ='/part2_Ch4_synopsis'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 下一章</button></a>
+    {% endblock %} 

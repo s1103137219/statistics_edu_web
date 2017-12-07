@@ -1,0 +1,57 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元五：一個案例研究</li>
+  <li class="breadcrumb-item">達爾文雀科喙深度的EDA</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_2">喙深度的ECDF</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_3">喙深度的參數估計</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_4">假設檢定：2012年喙是否更深？</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_5">喙長度和深度的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_6">線性回歸</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_7">顯示線性回歸結果</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_8">喙長與深度比</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_9">遺傳力的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_10">後代與父母數據的關聯</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_11">Pearson相關的後代和父母的數據</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_12">測量遺傳力</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_13">在G. scandens中，深的喙會遺傳嗎？</a></li>
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+        對於你第一次進入達爾文雀科數據，你將研究如何隨著時間的推移，雀鯛物種 <code>Geospiza scandens</code> 的喙深度（封閉喙的距離，從頂部到底部）會發生變化。已經註意到喙的一些變化，取決於島上種子的種類，他們還注意到，在 <code>Daphne Major,Geospiza fortis</code> 中有一些與另一種主要物種的雜種。這些影響可能導致物種隨時間的變化。
+    </p>
+    <p>
+    在接下來的幾個問題中，您將看到 <code>1975</code> 年和 <code>2012</code> 年 <code>Daphne Major</code> 的 <code>Geospiza scandens</code> 的喙深度。首先，讓我們使用群蜂圖繪製 <code>1975</code> 年和 <code>2012</code> 年的所有喙深度測量。
+    </p>
+    <p>
+    數據存儲在名為 <code>df</code> 的 <code>pandas DataFrame</code> 中，列為' <code>year</code> '和' <code>beak_depth</code> '。喙深度單位為毫米（毫米）。
+    </p>
+
+   {% endblock%}
+                  {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_2" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_1" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">創建群蜂圖</li>
+
+       <li class="title-li">標記軸。</li>
+
+       <li class="title-li">顯示圖。</li>
+     
+  {% endblock %}
+
+      {% block form %}
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part2_Ch5_2'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

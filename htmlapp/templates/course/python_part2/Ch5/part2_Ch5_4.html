@@ -1,0 +1,63 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元五：一個案例研究</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_1">達爾文雀科喙深度的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_2">喙深度的ECDF</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_3">喙深度的參數估計</a></li>
+  <li class="breadcrumb-item">假設檢定：2012年喙是否更深？</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_5">喙長度和深度的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_6">線性回歸</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_7">顯示線性回歸結果</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_8">喙長與深度比</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_9">遺傳力的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_10">後代與父母數據的關聯</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_11">Pearson相關的後代和父母的數據</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_12">測量遺傳力</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_13">在G. scandens中，深的喙會遺傳嗎？</a></li>
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+    你的 <code>ECDF</code> 情節和信賴區間的確定使得 <code>Daphne Major</code> 的 <code>Geospiza scandens</code> 的喙變得更加深刻。但這可能是因為隨機的機會嗎？換句話說，如果平均值是相同的，我們可以得到觀察到平均喙深度差異的概率是多少？
+    </p>
+    <p>
+    小心！我們正在測試的假設不是喙深度來自相同的分佈。為此，我們可以使用排列檢定。這個假設是平等的手段。為了執行這個假設檢驗，我們需要移動兩個數據集，使它們具有相同的平均值，然後使用引導抽樣來計算均值。
+    </p>
+
+
+   {% endblock%}
+                     {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_5" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_4" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+       <li class="title-li">製作 <code>1975</code> 年和 <code>2012</code> 年喙深度的連接陣列併計算並儲存其平均值。</li>
+
+       <li class="title-li">移 <code>bd_1975</code> 和 <code>bd_2012</code> ，使其方法等於您為組合數據集計算的平均值。</li>
+
+       <li class="title-li">對於 <code>1975</code> 年和 <code>2012</code> 年的喙深度，分別取平均值的 <code>10,000</code> 次拔靴法複製。</li>
+       
+       <li class="title-li">從 <code>2012</code> 年復製品中減去 <code>1975</code> 年的複製品以獲得拔靴複製品的差異。</li>
+       
+       <li class="title-li">計算輸出 <code>p</code> 值。</li>
+     
+  {% endblock %}
+
+      {% block form %}
+      
+ <a href='/part2_Ch5_3'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+        
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part2_Ch5_5'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

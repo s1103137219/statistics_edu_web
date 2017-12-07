@@ -1,0 +1,52 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元四：假設檢定的例子</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch4_1">1964年“民權法案”投票</a></li>
+  <li class="breadcrumb-item">網站上的模擬時間</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch4_3">皮爾遜相關假設檢驗</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch4_4">新菸鹼類殺蟲劑有意想不到的後果？</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch4_5">對於精子計數的拔靴假設檢驗</a></li>
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+    事實證明，您已經做了一個類似於 <code>A / B</code> 測試的假設測試，您對廣告活動之前和之後在網站上花費的時間感興趣。青蛙舌頭力量（像網站上的時間一樣連續）是一種模擬。“之前”=青蛙 <code>A</code> 和“之後”=青蛙 <code>B</code> 。讓我們再練習一下實際上是一個前後的情景。
+    </p>
+    <p>
+     我們返回到無安打比賽數據集。  <code>1920</code> 年，棒球大聯盟實施了重要的規則變革，結束了所謂的死球時代。重要的是，投手不再允許投擲或磨損球，這是非常有利於投手的活動。在這個問題中，您將執行 <code>A / B</code> 測試，以確定這些規則更改是否導致使用平均無間斷時間之間差異的無安打比賽速度較慢（即無安打比賽之間的較長平均時間）作為您的檢驗統計。相應時代的不間斷時間存儲在陣列 <code>nht_dead</code> 和 <code>nht_live</code> 中，其中“ <code>nht</code> ”意在代表“無安打比賽時間”。
+    </p>
+    <p>
+    因為在本練習中你將使用 <code>draw_perm_reps（）</code> 函數，所以提醒自己它的呼叫簽名可能是有用的： <code>draw_perm_reps（d1，d2，func，size = 1）</code> ，甚至參考你在第 <code>3</code> 章定義的練習
+    </p>
+     
+
+   {% endblock%}
+               {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_3" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_2" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">使用 <code>diff_of_means（nht_dead,nht_live）</code> 計算觀察到的平均無安打比賽的差異。</li>
+
+       <li class="title-li">使用 <code>draw_perm_reps（）</code> 生成 <code>10,000</code> 排列複製品差異的平均。</li>
+
+       <li class="title-li">計算並印出 <code>p</code> 值。</li>
+       
+  {% endblock %}
+
+      {% block form %}
+  <a href='/part2_Ch4_1'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+      
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part2_Ch4_3'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

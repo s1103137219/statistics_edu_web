@@ -1,0 +1,50 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元二：拔靴信賴區間</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_1">想像拔靴確認法樣本</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_2">生成許多拔靴確認法的樣本</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_3">拔靴確認法重複平均值和SEM</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_4">拔靴法的重複抽樣統計量與其他統計訊息</a></li>
+  <li class="breadcrumb-item">無安打比賽的信賴區間</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_6">一個功能來做成對的拔靴法抽樣</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_7">文盲/生育力數據成對的拔靴法抽樣</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_8">繪製拔靴法配適出來的回歸式</a></li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+        再次考慮現代棒球時代無安打比賽的間隔時間。 生成 <code>10,000</code> 拔靴法重複抽樣統計量的最佳參數 <code>τ</code> 。 繪製重複的直方圖並報告 <code>95％</code> 信賴區間。
+    </p>
+
+
+   {% endblock%}
+         {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_6" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_5" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+    <li class="title-li">使用 <code>draw_bs_reps（）</code> 函數從 <code>nohitter_times</code> 數據生成 <code>10000</code> 個拔靴法重複的 <code>τ</code> 。 回想一下，最佳的 <code>τ</code> 是作為數據的平均值來計算的。</li>
+
+    <li class="title-li">使用 <code>np.percentile（）</code> 計算 <code>95％</code> 信賴區間並傳入兩個參數：數和百分位數列表（本例中為 <code>2.5</code> 和 <code>97.5</code> ）。</li>
+
+    <li class="title-li">印出信賴區間。</li>
+    
+    <li class="title-li">繪製引導程序複製的直方圖。點擊“執行”以顯示您的圖。</li>
+
+  {% endblock %}
+
+      {% block form %}
+       <a href='/part2_Ch2_4'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+       
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part2_Ch2_6'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

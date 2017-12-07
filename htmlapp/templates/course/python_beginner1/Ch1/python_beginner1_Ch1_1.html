@@ -1,0 +1,54 @@
+{% extends 'style/beginner_course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元一：變數、型別</li>
+  <li class="breadcrumb-item active">型別辨識</li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_2">型別轉換</a></li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_3">List、tuple</a></li>
+    <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_4">Set、Dict</a></li>
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+   <h2>第一題:型別辨識</h2>
+   <p>在程式語言中，變數是一種存取數值的一種「容器」，它們有著不同的型別，常見的有整數 <code>int</code>、浮點數 <code>float</code>
+   以及字元 <code>str</code>、布林 <code>bool</code> ……等。
+   </p>
+   <p>
+       <code>Python</code> 的變數會依據所存取的數值為何，再藉此定義變數的型別，常見型別例子：
+       <br><code>a = 5</code>，此變數 <code>a</code> 將被視為整數  <code>int</code> 
+       <br><code>a = 4.5</code>視為浮點數 <code>float</code>  
+       <br><code>a = 'String'</code> 或 <code>a = "String"</code> 視為字元 <code>str</code>   
+       <br><code>a = True</code> 或 <code>a = False</code> 視為布林 <code>bool</code>   
+       </p>
+    <h2>練習</h2>
+    <p>
+       我們先做個簡單的小小練習，先建立變數 <code>a,b,c,d</code> 來存取不同的型別，再以 <code>type()</code> 
+       來辨識它們的型別。 
+    </p>
+
+   {% endblock%}
+   
+{% block comlen%} 
+   
+      <a href="/python_beginner{{part}}_Ch{{ch}}_2" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/python_beginner{{part}}_Ch{{ch}}_1" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+ 
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li"><code>type()</code> 的使用方式是將變數放置<code>()</code>裡。</li>
+      <li class="title-li">請以 <code>print()</code> 作結果的輸出。它的用法與 <code>type</code> 雷同。</li>
+
+      
+  {% endblock %}
+
+      {% block form %}
+  <a href='/python_beginner{{part}}_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/python_beginner{{part}}_Ch{{ch}}_2'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

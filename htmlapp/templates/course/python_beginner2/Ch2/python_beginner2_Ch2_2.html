@@ -1,0 +1,60 @@
+{% extends 'style/beginner_course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元二：類別、套件使用</li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_1">類別</a></li>
+  <li class="breadcrumb-item active">如何使用函式庫</li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_3">Pandas</a></li>
+
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+   <h2>第二題:如何使用函式庫</h2>
+   <p>
+      在安裝 <code>Python</code> 之後，可以在某一路徑找到 <code>site-packages</code> 資料夾，裡頭存放的資料夾裡頭 <code>.py</code>
+      檔案，就是以 <code>class , def</code> 包成的套件，可以把 <code>site-packages</code> 當作是函式庫，而通常要安裝都會使用
+      <code>pip install 套件名稱</code> 這樣的指令，如果是使用 <code>Linux</code> 作業系統就有區分 <code>pip</code> 及 <code>pip3</code>
+      <code>pip3</code>，這裡就不講述太深。<br>
+      通常要使用已安裝的套件，我們會以 <code>import 套件名稱.檔案名.class.def as 自建名稱</code> 這樣階層式的方式引用，比如在此系統有的套件：
+      <pre class="code-text">
+import numpy as np
+
+print(np.random.randint(0, 3,size=(3,4)))</pre>
+    </p>
+    <p>
+       我們將 <code>numpy</code> 資料夾引用進來，接著將它命名為 <code>np</code> 呼叫在它裡頭有的 <code>random</code>，並使用
+       裡頭的功能 <code>randint</code> 建立元素都在 <code>0~3</code> 之間的三乘四二維亂數。
+    </p>
+    <h2>練習</h2>
+    <p>
+       引用 <code>numpy</code>，使用看看 <code>random.randint</code> 功能。
+     </p>
+
+   {% endblock%}
+   
+{% block comlen%} 
+   
+      <a href="/python_beginner{{part}}_Ch{{ch}}_3" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/python_beginner{{part}}_Ch{{ch}}_2" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+ 
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">引用的方式為 <code>import</code>。</li>
+      <li class="title-li">命名方式不限。</li>
+
+      <li class="title-li">請以 <code>print()</code> 作結果的輸出。</li>
+
+      
+  {% endblock %}
+
+      {% block form %}
+  <a href='/python_beginner{{part}}_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/python_beginner{{part}}_Ch{{ch}}_3'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

@@ -1,0 +1,54 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元五：一個案例研究</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_1">達爾文雀科喙深度的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_2">喙深度的ECDF</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_3">喙深度的參數估計</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_4">假設檢定：2012年喙是否更深？</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_5">喙長度和深度的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_6">線性回歸</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_7">顯示線性回歸結果</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_8">喙長與深度比</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_9">遺傳力的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_10">後代與父母數據的關聯</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_11">Pearson相關的後代和父母的數據</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_12">測量遺傳力</a></li>
+  <li class="breadcrumb-item">在G. scandens中，深的喙會遺傳嗎？</li>
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+     <code>G. scandens</code> 中喙深度的遺傳率似乎很低。 可能這個觀察到的遺傳力只是偶然地獲得，喙的深度實際上並不是真正的遺傳物種。 你會在這裡測試這個假設。 為了做到這一點，你會做一個對排列測試。    </p>
+
+
+   {% endblock%}
+      
+      <a href="/setting" class="btn btn-info btn-lg">返回設定</a>
+      <a href="/part{{part}}_Ch{{ch}}_13" class="btn btn-info btn-lg">再練習一次</a>
+    
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+       <li class="title-li">初始化您的遺傳性重複陣列。 我們將採取 <code>10,000</code> 對排列重複。</li>
+
+       <li class="title-li">寫一個 <code>for</code> 循環來重複你的生成。</li>
+        <ul>
+            <li style="list-style-type:circle">使用 <code>np.random.permutation（）</code> 來排列 <code>bd_parent_scandens</code> 陣列。</li>
+            <li style="list-style-type:circle">使用您在上一個練習中編寫的 <code>heritability() </code> 函數計算置換陣列和 <code>bd_offspring_scandens</code> 陣列之間的遺傳力。 將結果儲存在復制陣列中。</li>
+        </ul>
+       
+       <li class="title-li">計算 <code>p</code> 值。</li>
+ 
+  {% endblock %}
+
+      {% block form %}
+      
+ <a href='/part2_Ch5_12'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+        
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+   {% endblock %} 

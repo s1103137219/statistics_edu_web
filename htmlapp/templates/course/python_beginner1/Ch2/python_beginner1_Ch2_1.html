@@ -1,0 +1,51 @@
+{% extends 'style/beginner_course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元二：運算、判斷、迴圈</li>
+  <li class="breadcrumb-item active">運算式</li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_2">判斷式(一)</a></li>
+    <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_3">判斷式(二)</a></li>
+    <li class="breadcrumb-item "><a href="/python_beginner{{part}}_Ch{{ch}}_4">for 迴圈</a></li>
+    <li class="breadcrumb-item "><a href="/python_beginner{{part}}_Ch{{ch}}_5">while 迴圈</a></li>
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+   <h2>第一題:運算式</h2>
+     <p>
+        加減乘除大概是所有程式中都一定會有的，當然 <code>Python</code> 也不例外，
+        如：<code>+,-</code> 便是程式的加減， <code>*</code> 代表乘，而 <code>/</code> 是除出現的也自然是商數，
+        <code>%</code> 也是除但出現的會是餘數，<code>**</code> 代表次方。 
+       
+    </p>
+   <h2>練習</h2>
+    <p>
+       建立四個變數 <code>a = 63</code>、<code>b = 55</code>、<code>c = 21.2</code>、<code>d = 30.75</code>，
+       請嘗試算出它們的變異數。
+    </p>
+
+   {% endblock%}
+   
+{% block comlen%} 
+   
+      <a href="/python_beginner{{part}}_Ch{{ch}}_2" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/python_beginner{{part}}_Ch{{ch}}_1" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+ 
+ {% block title2%}
+    <h2>說明</h2>
+       <li class="title-li">變異數=(單一個數 - 平均)2次方的加總，除以數量。</li>
+
+       <li class="title-li">請以 <code>print()</code> 作結果的輸出。</li>
+
+      
+  {% endblock %}
+
+      {% block form %}
+  <a href='/python_beginner{{part}}_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/python_beginner{{part}}_Ch{{ch}}_2'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

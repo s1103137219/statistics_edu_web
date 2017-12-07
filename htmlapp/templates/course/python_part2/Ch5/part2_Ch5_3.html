@@ -1,0 +1,62 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元五：一個案例研究</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_1">達爾文雀科喙深度的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_2">喙深度的ECDF</a></li>
+  <li class="breadcrumb-item">喙深度的參數估計</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_4">假設檢定：2012年喙是否更深？</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_5">喙長度和深度的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_6">線性回歸</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_7">顯示線性回歸結果</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_8">喙長與深度比</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_9">遺傳力的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_10">後代與父母數據的關聯</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_11">Pearson相關的後代和父母的數據</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_12">測量遺傳力</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch5_13">在G. scandens中，深的喙會遺傳嗎？</a></li>
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+    估計 <code>1975</code> 年至 <code>2012</code> 年 <code>Geospiza scandens</code> 樣本的平均深度差異，並報告 <code>95％</code> 信賴區間。
+    <p>
+    因為在這個練習中，你將使用你在第 <code>2</code> 章中寫的 <code>draw_bs_reps（）</code> 函數，參考它可能是有幫助的。
+    </p>
+
+
+   {% endblock%}
+                     {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_4" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_3" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+       <li class="title-li">計算樣本平均值的差。</li>
+
+       <li class="title-li">使用 <code>draw_bs_reps（）</code> 函數，獲取 <code>1975</code> 年喙深度的平均值的 <code>10,000</code> 次拔靴法的複製。 在 <code>2012</code> 年的喙深度，也可以獲得 <code>10,000</code> 次拔靴法平均值。</li>
+
+       <li class="title-li">從 <code>2012</code> 年的複製品中減去 <code>1975</code> 年的複製品以得到不同手段的拔靴法複製品。</li>
+       
+       <li class="title-li">使用 <code>np.percentile</code> 計算 <code>95％</code> 的信賴區間。</li>
+       
+       <li class="title-li">點擊“執行”來看圖！</li>
+     
+  {% endblock %}
+
+      {% block form %}
+      
+ <a href='/part2_Ch5_2'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+        
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part2_Ch5_4'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

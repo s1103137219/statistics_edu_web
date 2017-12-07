@@ -1,0 +1,60 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元三：介紹假說檢定</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_1">產生排列樣本</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_2">想像排列樣本</a></li>
+  <li class="breadcrumb-item">生成複製樣本</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_4">在假設檢定之前的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_5">青蛙數據測試</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_6">一個樣本引導假說檢定</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_7">相同分佈的引導測試</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_8">雙樣本引導假設檢驗的手段差異</a></li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+        複製樣本是從排列樣本計算的統計量的個值。 由於您在第 <code>2</code> 章中寫入的 <code>draw_bs_reps（）</code> 函數對於生成複製樣本很有用，因此使用類似函數 <code>draw_perm_reps（）</code> 來生成複製樣本是有用的。 您將在本練習中寫下這個有用的功能。
+    </p>
+    
+    <p>
+        函數調用 <code>draw_perm_reps（data_1，data_2，func，size = 1）</code> 。 重要的是， <code>func</code> 必須是一個使用兩個數組作為參數的函數。 在大多數情況下， <code>func</code> 將是您自己編寫的一個功能。
+    </p>
+
+
+   {% endblock%}
+            {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_4" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_3" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">用 <code>draw_perm_reps（data_1，data_2，func，size = 1）</code> 定義一個函數。</li>
+        <ul>
+            <li style="list-style-type:circle">使用 <code>np.empty（）</code> 初始化陣列來保存複製樣本。</li>
+            <li style="list-style-type:circle">寫一個 <code>for</code> 循環</li>
+        <ul>
+            <li style="list-style-type:square">使用您的 <code>permutation_sample（）</code> 函數計算排列樣本</li>
+            <li style="list-style-type:square">將樣本傳遞給函數來計算樣本並將結果儲存在復制陣列中。</li>
+        </ul>
+            <li style="list-style-type:circle">回傳重複陣列。</li>
+        </ul>
+
+
+       
+  {% endblock %}
+
+      {% block form %}
+      
+  <a href='/part2_Ch3_2'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+      
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part2_Ch3_4'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

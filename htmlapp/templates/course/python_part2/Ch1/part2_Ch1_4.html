@@ -1,0 +1,58 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元一：透過優化的參數估計？</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_1">我們多久可以看到一場無安打比賽？</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_2">數據吻合我們的情境嗎？</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_3">這個參數如何最優？</a></li>
+  <li class="breadcrumb-item active">識字/生育的探索式資料分析(EDA)</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_5">線性回歸</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_6">如何最佳？</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_7">對適當的Anscombe數據進行線性回歸</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_8">對所有Anscombe數據進行線性回歸</a></li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+        在接下來的幾個練習中，我們將研究全世界女性識字率與生育率（定義為每個女性的平均小孩數）之間的相關性。為了便於分析和解讀，我們將使用文盲率。
+    </p>
+   
+    <p>
+        在分析前先做一些探索式資料分析 <code>(EDA)</code> 總是一個好主意。為此，繪製生育率與識字率，併計算 <code>Pearson</code> 相關係數。
+    </p>
+    
+    <p>
+         這裡可能有用的是參考您在上一課程中寫的函數來計算 <code>Pearson</code> 相關係數。
+    </p>
+    
+   {% endblock%}
+      {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_4" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_3" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">將生育率 <code>（fertility，y軸）</code> 與文盲率 <code>（illiteracy，x軸）</code> 作為點散圖。</li>
+
+       <li class="title-li">在圖上設置 <code>2％</code> 的臨界值。</li>
+
+       <li class="title-li">計算並打印文盲與生育之間的 <code>Pearson</code> 相關係數 <code>（pearson_r）</code> 。</li>
+
+
+  {% endblock %}
+
+      {% block form %}
+      
+  <a href='/part2_Ch1_3'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part2_Ch1_5'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

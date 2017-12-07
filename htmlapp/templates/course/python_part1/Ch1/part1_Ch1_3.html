@@ -1,0 +1,57 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元一：探索數據圖形化分析</li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_1">繪製直方圖</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_2">直方圖x軸、y軸設定</a></li>
+  <li class="breadcrumb-item active">調整直方圖</li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_4">製作群蜂圖</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_5">編寫ECDF函數</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_6">運用ECDF函數</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_7">一次繪製三個物種的ECDF圖</a></li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+   <h2>調整直方圖中的組數</h2>
+   <p>
+       剛剛製作的直方圖有十個組數，因為是 <code>matplotlib</code> 的預設值。
+       「 <code>平方根規則</code> 」是 <code>選擇組數</code> 的常用經驗法則：選擇
+       樣本數的平方根數作為組數。那現在再次繪製鳶尾花花瓣長度的直方圖，此時使
+       用平方根規則進行組數。
+   </p>
+    <h2>第三題:調整直方圖</h2>
+    <p>
+        繪圖套件 <code>matplotlib.pyplot</code>  、 <code>Seaborn</code> 記得引入
+        。利用 <code>plt.hist( )</code> 內的 <code>bins</code> 關鍵字參數指定組數
+        。存放資料的變數為 <code>versicolor_petal_length</code> 。
+    </p>
+   {% endblock%}
+{% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_4" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_3" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+      
+ {% block title2%}
+    <h2>說明</h2>
+ 
+       <li class="title-li"><code>import</code> <code> numpy</code> 套件(通常變數名稱會取 <code>np</code> )可以使用它提供計算開根號的方法 <code>np.sqrt( )</code> 。</li>
+
+       <li class="title-li">了解數據資料的筆數或數量可以使用 <code>len( )</code> 。</li>
+       
+       <li class="title-li">利用平方根規則計算指定組數的參數 <code>bins</code> 。</li>
+       
+       <li class="title-li">記得將計算出來的組數用 <code>int( )</code> 轉成整數型態。</li>
+       
+       <li class="title-li">記得在 <code>plt.hist( )</code> 下 <code>bins</code> 關鍵字。</li>
+
+  {% endblock %}
+
+     {% block form%}
+  <a href='/part1_Ch1_2'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+  <a href='/part1_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+  <a href='/part1_Ch1_4' ><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 下一題</button></a>
+     {% endblock %}

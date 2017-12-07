@@ -1,0 +1,59 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元二：拔靴信賴區間</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_1">想像拔靴確認法樣本</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_2">生成許多拔靴確認法的樣本</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_3">拔靴確認法重複平均值和SEM</a></li>
+  <li class="breadcrumb-item">拔靴法的重複抽樣統計量與其他統計訊息</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_5">無安打比賽的信賴區間</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_6">一個功能來做成對的拔靴法抽樣</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_7">文盲/生育力數據成對的拔靴法抽樣</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_8">繪製拔靴法配適出來的回歸式</a></li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+        我們在以前的練習中看到，平均值是常態分佈的。這不一定適用於其他統計數據，但不用擔心，我們可以隨時使用拔靴法重複抽樣的統計量！ 在這個練習中，您將為 <code>Sheffield</code> 氣象台年降水量的變化產生拔靴法的重複抽樣統計量，並繪製重複的直方圖。
+    </p>
+    <p>
+       這裡，你將使用你之前定義的 <code>draw_bs_reps（）</code> 函數。 以下提供參考：
+    </p>
+    <p>
+         <code>def draw_bs_reps（data，func，size = 1）：</code> 
+    </p>
+    <p>
+        <code>return np.array([bootstrap_replicate_1d(data, func) for _ in range(size)])</code> 
+    </p>
+
+
+   {% endblock%}
+         {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_5" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_4" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+    <li class="title-li">使用 <code>draw_bs_reps（）</code> 函數在年降雨量中繪製 <code>10000</code> 次拔靴確認法的樣本。 提示：傳入 <code>np.var</code> 來計算標準差。</li>
+
+    <li class="title-li">為方便起見，將您的重複標準差<code>bs_replicates／100</code> ，以平方厘米為單位。</li>
+
+    <li class="title-li">使用 <code>normed = True</code> 關鍵字參數和 <code>50</code> 個分檔製作 <code>bs_replicates</code> 的直方圖。</li>
+    
+    <li class="title-li">點擊“執行”以顯示您的情節。</li>
+
+  {% endblock %}
+
+      {% block form %}
+       <a href='/part2_Ch2_3'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+       
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part2_Ch2_5'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

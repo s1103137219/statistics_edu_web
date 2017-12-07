@@ -1,0 +1,64 @@
+{% extends 'style/beginner_course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元二：運算、判斷、迴圈</li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_1">運算式</a></li>
+  <li class="breadcrumb-item active">判斷式(一)</li>
+    <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_3">判斷式(二)</a></li>
+  <li class="breadcrumb-item "><a href="/python_beginner{{part}}_Ch{{ch}}_4">for 迴圈</a></li>
+    <li class="breadcrumb-item "><a href="/python_beginner{{part}}_Ch{{ch}}_5">while 迴圈</a></li>
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <h2>第二題:判斷式</h2>
+    <p>
+       所謂的判斷，就是以有、沒有來做的決定，在 <code>Python</code> 中判斷式是以 <code>if...else...</code> 所呈現的，
+       好比判斷 <code>1 < 2</code> 我們雖然能直接以 <code>print()</code> 結果為 <code> True </code> ，但卻不能改變此結果的說法
+       ，在我們想以其他輸出方式作為判斷的結果便會使用 <code>if...else...</code> 的方式。
+       <br>如：
+       <pre class="code-text">
+if 1 < 2 :
+    print("1真的小於2")
+else:
+    print("1其實不小於2")
+      </pre>
+      </p>
+      <p>
+      裡頭的例子 <code>print()</code> 之所以要空格是因為 <code>Python</code> 是以類似階層似的方式來判斷是否包覆在裡頭，一般以 <code>空白四格</code> 
+      為縮排做類似階層的動作。
+      再來上述的例子，只是其中的一種用法，扣除 <code><、></code> ，還有代表等於的 <code>==</code> 、不相等的 <code>!=</code>
+      以及其他的 <code>and、or、not</code> 。
+    </p>
+    <h2>練習：</h2>
+    <p>
+       創建變數 <code>num = 'a' </code>、<code>num2 = 'A' </code> 以 <code>if...else...</code>判斷他們誰大誰小，
+       輸出較大的變數名稱
+    </p>
+
+   {% endblock%}
+{% block comlen%} 
+   
+      <a href="/python_beginner{{part}}_Ch{{ch}}_3" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/python_beginner{{part}}_Ch{{ch}}_2" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+ {% block title2%}
+    <h2>說明</h2>
+      <li class="title-li"> <code>num</code> 與 <code>num2</code> 皆不是數字，但系統會以 <code>ASCII</code> 去做比較。</li>
+      <li class="title-li">請記得要有四個空白，這樣 <code>Python</code> 才會辨別變數有在 <code>if...else...</code> 裡頭。</li>
+      <li class="title-li">若 <code>num</code> 較大 <code>print("num")</code> ，反之 <code>print("num2")</code>。</li>
+      
+
+      
+  {% endblock %}
+
+      {% block form %}
+  <a href='/python_beginner{{part}}_Ch{{ch}}_1'><button type="button" class="btn btn-info"><span class="oi oi-chevron-left"></span> 上一題</button></a>
+
+  <a href='/python_beginner{{part}}_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/python_beginner{{part}}_Ch{{ch}}_3'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

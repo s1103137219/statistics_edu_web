@@ -1,0 +1,57 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元二：了解數據圖形化分析</li>
+  <li class="breadcrumb-item active"><a href="/part1_Ch2_1">計算平均</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch2_2">計算百分位數</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch2_3">繪製ECDF:比較百分位數</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch2_4">繪製盒鬚圖</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch2_5">計算變異數</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch2_6">計算標準差與變異數</a></li>
+  <li class="breadcrumb-item">繪製散佈圖</li>
+  <li class="breadcrumb-item"><a href="/part1_Ch2_8">計算共變異數</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch2_9">計算皮爾生相關係數</a></li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+   <h2>散佈圖</h2>
+    <h2>第七題:繪製散佈圖</h2>
+    <p>
+        在之前的練習裡繪製的群蜂圖、盒鬚圖以及 <code>ECDF</code> 圖時，比較了不同種類的鳶尾花的花瓣長度，
+        這次練習將增加鳶尾花花瓣的寬度，來測量花瓣長度與寬度的散佈圖。
+    </p>
+    <p>
+        下面為繪製散佈圖的參考代碼：</br>
+    <code>_ = plt.plot(X, Y, marker='.', linestyle='none')</code></br>
+    <code>_ = plt.xlabel(‘X軸')</code></br>
+   <code> _ = plt.ylabel(‘Y軸')</code>
+
+    </p>
+
+   {% endblock%}
+{% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_8" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_7" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+ {% block title2%}
+    <h2>說明</h2>
+ 
+       <li class="title-li">使用<code>plt.plot()</code> 繪製散佈圖，變數 <code>versicolor_petal_length</code> 與 <code>versicolor_petal_width</code> 可在此題使用。</li>
+
+       <li class="title-li">指定邊距為 <code>2%</code> ，座標名稱須設定。</li>
+       
+       <li class="title-li">輸出圖形。</li>
+     
+  {% endblock %}
+
+      {% block form %}
+  <a href='/part1_Ch2_6'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+
+  <a href='/part1_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 回課綱</button></a>
+
+  <a href='/part1_Ch2_8'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 下一題</button></a>
+    {% endblock %} 

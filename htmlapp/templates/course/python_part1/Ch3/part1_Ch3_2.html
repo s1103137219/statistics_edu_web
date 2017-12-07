@@ -1,0 +1,63 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元三：離散隨機變數與連續隨機變數</li>
+  <li class="breadcrumb-item active"><a href="/part1_Ch3_1">產生隨機數</a></li>
+  <li class="breadcrumb-item">隨機數與伯努利試驗</li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_3">有多少人會拖欠借款？</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_4">銀行是否會虧損</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_5">二項分配抽樣</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_6">用直方圖繪製二項分佈的PMF(機率質量函數)</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_7">二項式與帕松分佈之間的關係</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_8">2015年的棒球數據是否異常？</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_9">常態分佈的PDF</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_10">常態分佈CDF</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_11">貝爾蒙特賽馬結果為常態分配？</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_12">打破Secretaria紀錄的機會有多少？</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_13">根據不同事件，創作一個自訂函數</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch3_14">無安打比賽和完全打擊的指數分配</a></li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+   <h2>np.random 與伯努利試驗</h2>
+    <p>
+        伯努利試驗是指在單一事件中結果只有兩種可能的隨機試驗，
+        最常見的例子就是猜硬幣，拋上空落下的硬幣會是正面還是反面。
+        簡單來說就是可以用是或否來回答的事件。
+    </p>
+    <h2>第二題:np.random 與伯努利試驗</h2>
+    <p>
+        在本次練習中，將定義一個函式來做試驗，規定函式 <code>perform_bernoulli_trials(n, p)</code> 
+        裡頭的 <code>n</code> 代表試驗的次數， <code>p</code> 代表成功的機率，並使用 <code>np.random.random()</code> 執行每一次的試驗。
+    </p>
+
+   {% endblock%}
+{% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_3" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_2" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">定義函式 <code>perform_bernoulli_trials(n, p)</code> 變數 <code>n_success</code> 設為 <code>0</code> ，
+      來記錄試驗成功的次數。</li>
+
+       <li class="title-li">使用 <code>for</code> 迴圈重複執行 <code>n</code> 次試驗。</li>
+
+       <li class="title-li">並用 <code>if</code> 判斷是否成功，若成功就增加次數。以 <code>np.random.random()</code> 是否小於 <code>p</code> 作為條件，符合條件 <code>n_success</code> 便會增加。</li>
+       
+       <li class="title-li">將 <code>n_success</code> 回傳 <code>(return)</code> 。</li>
+
+  {% endblock %}
+
+      {% block form %}
+  <a href='/part1_Ch3_1'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+
+  <a href='/part1_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 回課綱</button></a>
+
+  <a href='/part1_Ch3_3'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 下一題</button></a>
+    {% endblock %} 

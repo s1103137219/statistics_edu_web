@@ -1,0 +1,66 @@
+
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!-- Optional theme-->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+{% load static %}
+<link href="{%static 'open-iconic-master/font/css/open-iconic-bootstrap.css' %}" rel="stylesheet">
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'CSS/synopsis_css.css' %}" type="text/css" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+<script  src='https://code.jquery.com/jquery-2.x-git.min.js'></script>
+
+</head>
+
+
+<body>
+<nav class="collapse navbar-collapse navbar navbar-expand-lg navbar-dark "  >
+  <div class=" navbar-nav-scroll ">
+<ul class="navbar-nav bd-navbar-nav flex-row ">
+  <li class="nav-item" role="presentation">
+      
+      {% include 'style/login_style.html' %}</il>
+<li class="nav-item" role="presentation"><a href='index' class="nav-link">{% block top_right %} {% endblock %}
+ <span class="oi oi-home"></span> <span  aria-hidden="true">{% block register %} 首頁  {% endblock %} </span> 
+</a></li>
+
+    </ul>
+   
+</div>
+
+</nav>
+
+<div class="mid">
+   <h1>{% block synopsis_h1 %}{% endblock %}<h1>
+{% url 'part_synopsis' as synopsis %}
+
+   <a href='/part{{part}}_Ch{{c}}_1'>
+        <button class="btn btn-info btn-lg" aria-label="Left Align">
+        {% block synopsis_button %}開始{% endblock %}
+        </button>
+    </a>
+
+</div>
+ 
+<div class="bot">
+    <div class="bot-main">
+
+        <span  aria-hidden="true" >{% block synopsis_span %}{% endblock %}</span>
+
+    </div>
+</div>
+
+</body>
+
+</html>

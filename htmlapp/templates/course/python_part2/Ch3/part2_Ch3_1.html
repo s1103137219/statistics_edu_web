@@ -1,0 +1,50 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元三：介紹假說檢定</li>
+  <li class="breadcrumb-item">產生排列樣本</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_2">想像排列樣本</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_3">生成複製樣本</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_4">在假設檢定之前的EDA</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_5">青蛙數據測試</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_6">一個樣本引導假說檢定</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_7">相同分佈的引導測試</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch3_8">雙樣本引導假設檢驗的手段差異</a></li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+        您了解排列樣本是模擬兩個變量具有相同概率分佈假設的好方法。 這通常是您想要測試的假設，因此在本練習中，你將編寫一個函數，從兩個數據集中生成一個排列樣本。
+    </p>
+    <p>
+        請注意，通過將陣列連接在一起，對連接的陣列的內容進行加擾，然後取第一個 <code>n1</code> 作為第一個數組和最後 <code>n2</code> 的排列樣本，構成了分別具有 <code>n1</code> 和 <code>n2</code> 個條目的兩個數組中的排列樣本作為第二陣列的排列樣本。
+        </p>
+
+   {% endblock%}
+            {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_2" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_1" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">使用 <code>np.concatenate（）</code> 將兩個輸入陣列連接成一個。 一定要傳入 <code>data1</code> 和 <code>data2</code> 作為一個參數（ <code>data1，data2</code> ）。</li>
+
+       <li class="title-li">使用 <code>np.random.permutation（）</code> 來交換連接的陣列。</li>
+
+       <li class="title-li"> <code>permuted_data</code> 的第一個 <code>len（data1）</code> 條目儲存為 <code>perm_sample_1</code> ，將最後一個 <code>len（data2）</code> 條目的 <code>permuted_data</code> 儲存為 <code>perm_sample_2</code> 。 在實踐中，這可以通過使用 <code>len（data1）</code> 和 <code>len（data1</code> ）來實現：切 <code>permuted_data</code> 。</li>
+
+       <li class="title-li">回傳 <code>perm_sample_1</code> 和 <code>perm_sample_2</code> 。</li>
+       
+  {% endblock %}
+
+      {% block form %}
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part2_Ch3_2'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

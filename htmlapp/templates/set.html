@@ -1,0 +1,111 @@
+
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!-- Optional theme-->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/index.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'CSS/setting_ver7.css' %}" type="text/css" />
+{% load static %}
+<link href="{%static 'open-iconic-master/font/css/open-iconic-bootstrap.css' %}" rel="stylesheet">
+<script src="{% static 'JS/Trier.js' %}" type="text/javascript" charset="utf-8"></script>
+
+<script  src='https://code.jquery.com/jquery-2.x-git.min.js'></script>
+<script>
+$(document).ready(function(){
+  var card =$(".card")
+  if(card.length==0){
+    
+    $(".mid-table").show()
+    
+  }else{
+    $(".mid-table").hide()
+    
+  }
+  
+  
+  
+})
+
+</script>
+
+</head>
+
+
+<body>
+
+
+<nav class="collapse navbar-collapse navbar navbar-expand-lg navbar-dark "  >
+  <div class=" navbar-nav-scroll ">
+<ul class="navbar-nav bd-navbar-nav flex-row ">
+  <li class="nav-item" role="presentation">
+      
+      {% include 'style/login_style.html' %}</il>
+<li class="nav-item" role="presentation"><a href='/index' class="nav-link">{% block top_right %} {% endblock %}
+  <span class="oi oi-home"></span><span  aria-hidden="true">{% block register %} 首頁  {% endblock %} </span> 
+</a></li>
+
+    </ul>
+   
+</div>
+
+</nav>
+
+<div class="mid">
+
+<ul class="nav flex-column nav-pills ">
+<li class="nav-link me" ><a class="nav-link" ><span class="oi oi-cog"> </span> 設定</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link  mea" href="/user" ><span  aria-hidden="true">個人資料</span></a></li>
+<li class="nav-item" role="presentation"><a class="nav-link  mea" href="/course" ><span  aria-hidden="true">選擇課程</span></a></li>
+</ul>
+{{user_password}}
+{% if coursebool != False or testc == 0 %}
+<form aciton="{{b}}" method="GET">
+
+
+<table class="course" id="course">
+
+
+
+{% for x in test.all %}
+{% if b != x.lesson_name and coursebool != False %}
+<div class="card">
+    <div class="card-body">
+         <h4 class="card-title">{{x}}</h4>
+        {{x.lesson_introduction |linebreaks}}
+        <div class="btn-group">
+    <a class="btn btn-info btn-lg"  href='/{{x.lesson_name}}' name="{{x.lesson_name}}">繼續課程</a>
+    <button class="btn btn-danger btn-lg" name="{{x.lesson_name}}_cancel">刪除課程</button>
+    </div>
+    </div>
+    
+    </div>
+
+{% endif %}
+{% endfor %}
+
+   
+</div >
+</table>
+</form>
+{% else %}
+
+
+
+{% endif  %}
+<table class="mid-table"  rules="all" cellpadding='5'>
+<tr><td>目前您還沒選擇課程<br>請至→<a href="/course">課程列表選取</a></td></tr>
+</table>
+</div>
+
+
+</body>
+
+</html>

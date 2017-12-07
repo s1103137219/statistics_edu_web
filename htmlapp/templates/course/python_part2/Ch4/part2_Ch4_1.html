@@ -1,0 +1,48 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元四：假設檢定的例子</li>
+  <li class="breadcrumb-item">1964年“民權法案”投票</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch4_2">網站上的模擬時間</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch4_3">皮爾遜相關假設檢驗</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch4_4">新菸鹼類殺蟲劑有意想不到的後果？</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch4_5">對於精子計數的拔靴假設檢驗</a></li>
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+         <code>1964</code> 年“民權法”是美國最重要的立法之一。不顧“亮票”和“棄權”的選票， <code>153</code> 位民主黨和 <code>136</code> 位共和黨人投了贊成票。不過， <code>91</code> 名民主黨人和 <code>35</code> 名共和黨人投了反對票。黨派有沒有影響投票？
+    </p>
+    <p>
+     為了回答這個問題，你將評估一個議員黨對他或她的投票沒有影響的假設。您將使用投票贊成的民主黨人數作為您的考察統計數據，並評估觀察民主黨投票贊成的一小部分至少與觀察到的 <code>153/244(153+91)</code> 分數一樣小的概率。 （這是正確的，至少比 <code>1964</code> 年民主黨人在民權問題上進步不大）為了做到這一點，要改變眾議院選民的黨標籤，然後將它們任意分為“民主黨人”和“共和黨人“，併計算民主黨投票的分數。
+     </p>
+
+   {% endblock%}
+               {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_2" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_1" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">構建包含各方投票的布林陣列；例如， <code>dems</code> 有 <code>153</code> 個 <code>True</code> 條目和 <code>91</code> 個 <code>False</code> 條目。</li>
+
+       <li class="title-li">寫一個函數， <code>frac_yay_dems（dems，reps）</code> 返回投票 <code>yay</code> 的民主黨的一小部分。 第一個輸入是一個布林陣列，需要兩個輸入來使用 <code>draw_perm_reps（）</code> 函數，但是第二個輸入不被使用。</li>
+
+       <li class="title-li">使用您的 <code>draw_perm_reps（）</code> 函數繪製民主黨票的 <code>10,000</code> 份。</li>
+
+       <li class="title-li">計算並印出 <code>p</code> 值。</li>
+       
+  {% endblock %}
+
+      {% block form %}
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part2_Ch4_2'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

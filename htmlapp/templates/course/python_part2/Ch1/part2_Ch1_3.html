@@ -1,0 +1,59 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元一：透過優化的參數估計</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_1">我們多久可以看到一場無安打比賽？</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_2">數據吻合我們的情境嗎？</a></li>
+  <li class="breadcrumb-item active">這個參數如何最優？</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_4">識字/生育的探索式資料分析(EDA)</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_5">線性回歸</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_6">如何最佳？</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_7">對適當的Anscombe數據進行線性回歸</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_8">對所有Anscombe數據進行線性回歸</a></li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+        把平均分配最佳t做一半以及兩倍大的 <code>CDF</code> ，並將其與數據重疊。您可以看到它們不會再現數據。因此，用平均計算的無安打比賽間隔t是最佳的，因為它最好地再現數據。
+    </p>
+   
+    <p>
+        注意：在隨後的這個練習和所有後續練習中，隨機數生成器被預先儲存，以便您保存一些結果。
+    </p>
+    
+    <p>
+         注意，如果平均值 <code>tau</code> 給出的值最接近數據， 這樣 <code>tau</code> 就是一個最佳參數。
+    </p>
+
+   {% endblock%}
+      {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_4" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_3" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">從參數 <code>tau / 2</code> 的指數分佈中取出 <code>10000</code> 個樣本。</li>
+
+       <li class="title-li">從參數 <code>2 * tau</code> 的指數分佈中取出 <code>10000</code> 個樣本。</li>
+
+       <li class="title-li">使用 <code>ecdf（）</code> 函數從這兩組樣本中生成 <code>CDF</code> 。</li>
+
+       <li class="title-li">將這兩個 <code>CDF</code> 作為添加到您的圖。 這已經完成了，所以點擊“執行”來查看你的圖！</li>
+       
+  {% endblock %}
+
+      {% block form %}
+      
+  <a href='/part2_Ch1_2'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part2_Ch1_4'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

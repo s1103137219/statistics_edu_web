@@ -1,0 +1,59 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元二：拔靴信賴區間</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_1">想像拔靴確認法樣本</a></li>
+  <li class="breadcrumb-item">生成許多拔靴確認法的樣本</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_3">拔靴確認法重複平均值和SEM</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_4">拔靴法的重複抽樣統計量與其他統計訊息</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_5">無安打比賽的信賴區間</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_6">一個功能來做成對的拔靴法抽樣</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_7">文盲/生育力數據成對的拔靴法抽樣</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_8">繪製拔靴法配適出來的回歸式</a></li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+        現在，您將編寫另一個函數 <code>draw_bs_reps（data，func，size = 1）</code> ，它從資料庫中生成許多引導複製。 這個功能會在你計算信賴區間後再次進行假說檢定。
+    </p>
+    
+    <p>
+       為了參考， <code>bootstrap_replicate_1d（）</code> 函數在下面提供：
+    </p>
+    <p>
+        <code>def bootstrap_replicate_1d(data, func):</code> 
+    
+    </p>
+    <p>
+        <code>return func(np.random.choice(data, size=len(data)))</code> 
+    </p>
+
+   {% endblock%}
+         {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_3" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_2" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li"> <code>使用draw_bs_reps（data，func，size = 1）</code> 定義一個函數。</li>
+        <ul>
+            <li style="list-style-type:circle">使用 <code>np.empty（）</code> ，初始化一個名為 <code>bs_replicates</code> 的陣列來保存所有的拔靴確認法的樣本。</li>
+            <li style="list-style-type:circle">編寫一個範圍超過大小的 <code>for</code> 循環，並使用 <code>bootstrap_replicate_1d（）</code> 計算複製。將復制樣副本儲存在 <code>bs_replicates</code> 的適當索引中。</li>
+            <li style="list-style-type:circle">返回複製數組 <code>bs_replicates</code> 。</li>
+        </ul>
+
+  {% endblock %}
+
+      {% block form %} 
+  <a href='/part2_Ch2_1'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+       
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part2_Ch2_3'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

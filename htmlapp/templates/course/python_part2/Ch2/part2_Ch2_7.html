@@ -1,0 +1,52 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元二：拔靴信賴區間</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_1">想像拔靴確認法樣本</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_2">生成許多拔靴確認法的樣本</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_3">拔靴確認法重複平均值和SEM</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_4">拔靴法的重複抽樣統計量與其他統計訊息</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_5">無安打比賽的信賴區間</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_6">一個功能來做成對的拔靴法抽樣</a></li>
+  <li class="breadcrumb-item">文盲/生育力數據成對的拔靴法抽樣</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch2_8">繪製拔靴法配適出來的回歸式</a></li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+        使用你剛剛寫的方法，執行成對的拔靴法抽樣，從文盲/生育力數據繪製描繪斜率估計的直方圖。 還報告斜率的 <code>95％</code> 信賴區間。  <code>NumPy</code> 陣列中的數據可用於文盲和生育力。
+    </p>
+    
+    <p>
+        作為提醒， <code>draw_bs_pairs_linreg（）</code> 具有 <code>draw_bs_pairs_linreg（x，y，size = 1）</code> 的函數，並返回兩個值： <code>bs_slope_reps</code> (斜率)和 <code>bs_intercept_reps</code> (截距)。。
+        </p>
+
+
+   {% endblock%}
+         {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_8" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_7" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+    <li class="title-li">使用 <code>draw_bs_pairs_linreg（）</code> 函數進行斜率和截距的 <code>1000</code> 次拔靴確認法的樣本。  <code>X</code> 軸數據是 <code>illiteracy</code> ， <code>Y</code> 軸數據是 <code>fertility</code> 。</li>
+
+    <li class="title-li">使用 <code>np.percentile</code> 計算並印出斜率 <code>95％</code> 的信賴區間。</li>
+
+    <li class="title-li">繪製並顯示斜率重複的直方圖。點擊“執行”來查看你的直方圖！</li>
+
+  {% endblock %}
+
+      {% block form %}
+       <a href='/part2_Ch2_6'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+       
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part2_Ch2_8'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

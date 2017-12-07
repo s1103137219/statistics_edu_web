@@ -1,0 +1,49 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元一：透過優化的參數估計？</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_1">我們多久可以看到一場無安打比賽？</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_2">數據吻合我們的情境嗎？</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_3">這個參數如何最優？</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_4">識字/生育的探索式資料分析(EDA)</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_5">線性回歸</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_6">如何最佳？</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_7">對適當的Anscombe數據進行線性回歸</a></li>
+  <li class="breadcrumb-item active">對所有Anscombe數據進行線性回歸</li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+         現在，為了驗證所有 <code>Anscombe's quartet</code> 都具有與線性回歸相同的斜率和截距，您將計算每個集合的斜率和截距。 數據存儲在列表中; <code>anscombe_x = [x1，x2，x3，x4]</code> 和 <code>anscombe_y = [y1，y2，y3，y4]</code> ，其中例如 <code>x2</code> 和 <code>y2</code> 是第二 <code>Anscombe</code> 數據集的 <code>x</code> 和 <code>y</code> 值。
+     </p>
+   
+   {% endblock%}
+         {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch2_synopsis" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_8" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">寫一個 <code>for</code> 循環為每個 <code>Anscombe</code> 數據集執行以下操作。</li>
+        <ul>
+            <li style="list-style-type:circle">計算斜率和截距。使用 <code>np.polyfit（）</code> 計算斜率和截距的參數。 <code>Anscombe</code> 數據存儲在資料 <code>x</code> 和 <code>y</code> 中。</li>
+            <li style="list-style-type:circle">輸出斜率和截距。使用 <code>np.array（）</code> 創建的 <code>x</code> 資料應包含 <code>3和15</code> 。r要生成 <code>y</code> 數據，請將斜率乘以 <code>x_theor</code> 並添加截距。</li>
+        </ul>
+
+
+  {% endblock %}
+
+      {% block form %}
+      
+  <a href='/part2_Ch1_7'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+   <a href ='/part2_Ch2_synopsis'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 下一章</button></a>
+    {% endblock %} 

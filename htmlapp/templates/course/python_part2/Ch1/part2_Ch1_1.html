@@ -1,0 +1,57 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元一：透過優化的參數估計</li>
+  <li class="breadcrumb-item active">我們多久可以看到一場無安打比賽？</li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_2">數據吻合我們的情境嗎？</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_3">這個參數如何最優？</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_4">識字/生育的探索式資料分析(EDA)</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_5">線性回歸</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_6">如何最佳？</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_7">對適當的Anscombe數據進行線性回歸</a></li>
+  <li class="breadcrumb-item"><a href="/part2_Ch1_8">對所有Anscombe數據進行線性回歸</a></li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <p>
+        現代的棒球大聯盟（ <code>1901 - 2015</code> 年）每場無安打比賽的間格都儲存在陣列 <code>nohitter_times</code> 中。
+    </p>
+   
+    <p>
+        如果你假設無安打比賽被描述為 <code>Poisson process</code> ，那麼無安打比賽之間的時間是指數分配。如你所見，指數分配有一個參數，我們稱之為 <code>t</code> ，典型的間隔時間。使指數分配與數據最匹配的參數t的值是無安打比賽之間的平均間隔時間（以場數為單位）。
+    </p>
+    
+    <p>
+        從數據中計算此參數的值。然後，透過從您發現的t指數分配使用 <code>np.random.exponential()</code> 繪製無安打比賽間隔時間來重複職業棒球大聯盟的歷史，並將直方圖繪製為PDF的近似值。
+    </p>
+    
+    <p>
+         <code>NumPy</code> ， <code>pandas</code> ， <code>matlotlib.pyplot</code> 和 <code>seaborn</code> 已分別導入為 <code>np</code> ， <code>pd</code> ， <code>plt</code> 和 <code>sns</code> 。
+    </p>
+
+   {% endblock%}
+{% block comlen%} 
+   
+      <a href="/part{{part}}_Ch{{ch}}_2" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/part{{part}}_Ch{{ch}}_1" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+ {% block title2%}
+    <h2>說明</h2>
+    
+       <li class="title-li">計算無安打比賽之間的平均時間（以場數為單位）。</li>
+
+       <li class="title-li">從指數分佈中抽取 <code>100,000</code> 個樣本，並使用您計算的參數，根據平均間隔時間來計算。</li>
+
+       <li class="title-li">使用 <code>plt.hist（）</code> 繪製理論 <code>PDF</code> 。 請記住使用關鍵字參數 <code>bins = 50</code> ， <code>normed = True</code> ， <code>histtype = 'step'</code> 。 一定要標記你的軸。</code> 。</li>
+       
+       <li class="title-li">顯示你的圖。</code> </li>
+  {% endblock %}
+
+      {% block form %}
+  <a href='/part2_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/part2_Ch1_2'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 

@@ -1,0 +1,74 @@
+{% extends 'style/course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元一：探索數據圖形化分析</li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_1">繪製直方圖</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_2">直方圖x軸、y軸設定</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_3">調整直方圖</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_4">製作群蜂圖</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_5">編寫ECDF函數</a></li>
+  <li class="breadcrumb-item"><a href="/part1_Ch1_6">運用ECDF函數</a></li>
+  <li class="breadcrumb-item active">一次繪製三個物種的ECDF圖</li>
+  {% endblock  %}
+  
+
+  {% block title1 %}
+   <h2>進行多種類比較的ECDF圖</h2>
+   <p>
+        <code>ECDF</code> 圖還可以進行兩個比較甚至更多（但如果過多，圖表會變得混亂）。
+   </p>
+    <h2>第七題:一次繪製三個物種的ECDF圖</h2>
+    <p>
+       要三個 <code>ECDF</code> 覆蓋在同一張圖上，可以直接使用 <code>plt.plot( )</code> 三次
+       ，記住要包括 <code>marker ='.' 和linestyle ='none'</code> 作為 <code>plt.plot( )</code> 中的參數。
+    </p>
+
+   {% endblock%}
+ {% block comlen%} 
+   
+      <a href="/part{{part}}_Ch2_synopsis" class="btn btn-info btn-lg">進入下一課</a>
+      <a href="/part{{part}}_Ch{{ch}}_7" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+      
+ {% block title2%}
+ 
+
+ 
+ 
+    <h2>說明</h2>
+ 
+        <li class="title-li">
+          把 <code>setosa_petal_length、versicolor_petal_length、virginica
+          _petal_length</code> 分別帶入 <code>ecdf( )</code> 做計算，
+          並用 <code>x_set, y_set、x_vers, y_vers、x_virg, y_virg</code> 去接收它們各自的回傳值。
+        </li>
+
+       <li class="title-li">
+           <code>plot</code> 函數用法， <code>_=plt.plot(X軸資料,Y軸資料,marker='.',linestyle='none')</code> ，此為點狀表示、取消線條連接。本題須做三次。
+       </li>
+       
+       <li class="title-li">
+           <code>plt.margins( )</code> 設定 <code>外距</code> 為 <code>0.02</code> ，預防某些資料會被裁掉。
+       </li>
+       
+       <li class="title-li">
+           <code>X</code> 與 <code>Y</code> 的標記軸分別為 <code>petal length (cm)</code> 和 <code>ECDF</code> 。
+       </li>
+       <li class="title-li">
+           <code>plt.legend(('第一個plot', '第二個plot', '第三個plot')
+           , loc='lower right')</code> 可以顯示圖例， <code>loc</code> 能指定圖例所在位置。
+       </li>
+       <li class="title-li">
+           畫完要用 <code>plt.show( )</code> 來顯示。
+       </li>
+
+  {% endblock %}
+
+     {% block form%}
+  <a href='/part1_Ch1_6'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 上一題</button></a>
+  <a href='/part1_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+  <a href ='/part1_Ch2_synopsis'><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 下一章</button></a>
+
+     {% endblock %}

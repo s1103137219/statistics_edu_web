@@ -1,0 +1,54 @@
+{% extends 'style/beginner_course_style.html' %}
+
+
+  {%block ol%}
+  <li class="breadcrumb-item">單元一：變數、型別</li>
+  <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_1">型別辨識</a></li>
+  <li class="breadcrumb-item active">型別轉換</li>
+    <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_3">List、tuple</a></li>
+    <li class="breadcrumb-item"><a href="/python_beginner{{part}}_Ch{{ch}}_4">Set、Dict</a></li>
+
+  {% endblock  %}
+  
+
+  {% block title1 %}
+    <h2>第二題:型別轉換</h2>
+    <p>
+        在不少爬蟲或程式的處理上，我們會將型別做轉換在做其他的處理或是判斷。
+        <br>轉換例子：<code>float(5)</code>、<code>int('6')</code>、<code>bool(0)</code>，它們分別輸出的結果就會是
+        <code>5.0</code>、<code>6</code>、<code>False</code>，但在字元 <code>str</code> 轉換成整數 <code>int</code>
+        上存在一點特別的因素，如果<code>int()</code>放入的是<code>'S'</code>，便會產生錯誤，需要以 <code>ord()</code>
+        轉換為整數 <code>int</code>，裡頭的整數 <code>int</code>由來是 <code>Ascii</code> 的對照碼。
+        <br><code>(<a target="_blank" href="https://zh.wikipedia.org/wiki/ASCII">維基所敘述的 Ascii</a>)</code>
+    </p>
+    <h2>練習</h2>
+    <p>
+       接下來，先創立變數 <code>zero = 0</code>、<code>five = 5</code> 轉換為字元 <code>str</code>，再轉為 <code>Ascii</code>　的整數
+       <code>int</code> ，並將 <code>five</code>、<code>zero</code> 放入<code>print()</code> 輸出。
+    </p>
+
+   {% endblock%}
+{% block comlen%} 
+   
+      <a href="/python_beginner{{part}}_Ch{{ch}}_3" class="btn btn-info btn-lg">進行下一題</a>
+      <a href="/python_beginner{{part}}_Ch{{ch}}_2" class="btn btn-info btn-lg">再練習一次</a>
+    
+      {% endblock %}
+ {% block title2%}
+    <h2>說明</h2>
+ 
+      <li class="title-li">型別的轉換是由內至外的。</li>
+      <li class="title-li"><code>,</code> 可以不讓數值黏在一起。</li>
+
+      <li class="title-li">請以 <code>print()</code> 作結果的輸出。</li>
+
+      
+  {% endblock %}
+
+      {% block form %}
+    <a href='/python_beginner{{part}}_Ch{{ch}}_1'><button type="button" class="btn btn-info"><span class="oi oi-chevron-left"></span> 上一題</button></a>
+
+  <a href='/python_beginner{{part}}_Ch{{ch}}_synopsis'><button type="button" class="btn btn-info"><span class="oi oi-grid-three-up"></span> 回課綱</button></a>
+
+  <a href='/python_beginner{{part}}_Ch{{ch}}_3'><button type="button" class="btn btn-info"><span class="oi oi-chevron-right"></span> 下一題</button></a>
+    {% endblock %} 
