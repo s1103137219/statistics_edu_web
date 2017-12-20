@@ -1,5 +1,8 @@
-a=0
-b=7
-while a < b and a != 6:
-    a=a+2
-    print(a)
+import matplotlib;matplotlib.use('agg');from function import *;
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set()
+plt.hist(versicolor_petal_length)
+plt.show()
+print(versicolor_petal_length)
+matplotlib.pyplot.savefig('htmlapp/static/image/plot.svg')

@@ -66,7 +66,7 @@ def login(request):
                 if user_email[x] != email:
                    confirm=confirm+0
                 else:
-                   confirm=confirm=+1
+                   confirm=confirm+1
          if confirm == 1:
             rand1 = [chr(random.randint(97, 122)) for x in range(4) ]
             rand2 = [chr(random.randint(65, 90)) for x in range(4)]
@@ -125,15 +125,15 @@ def register(request):
            email=request.GET.get('email')
            acc=request.GET.get('acceunt')
            for x in range(len(user_acc)):
-               if user_acc[x] != acc:
-                   acc_confirm=acc_confirm
-               else:
+               if user_acc[x] == acc:
                    acc_confirm=acc_confirm+1
+               #else:
+                #   acc_confirm=acc_confirm+1
            for x in range(len(user_email)):
-               if user_email[x] != email:
-                   email_confirm=email_confirm
-               else:
+               if user_email[x] == email:
                    email_confirm=email_confirm+1
+               #else:
+                #   email_confirm=email_confirm+1
            if acc_confirm ==0 and email_confirm ==0: 
               password=request.GET.get('passd')
               password2=request.GET.get('passd2')
@@ -154,7 +154,6 @@ def setting(request):
     coursebool=bool(row)
     if coursebool != False:
        test=course4_attribute.objects.filter(user_id=str(request.user.id))
-       test=test
        testa=[x for x in test]
        testc=len(testa)
        if request.method =="GET":
