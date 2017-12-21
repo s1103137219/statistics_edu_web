@@ -110,7 +110,7 @@ def change_password(request):
 def register(request):
     user_email=User.objects.all()
     
-    if request.method == 'GET' && 'confirm' in request.GET:
+    if (request.method == 'GET') and ('confirm' in request.GET):
 
            acc_confirm = 0
            email_confirm = 0
@@ -154,7 +154,7 @@ def setting(request):
        test=course4_attribute.objects.filter(user_id=str(request.user.id))
        testa=[x for x in test]
        testc=len(testa)
-       if request.method =="GET" && testc != 0:
+       if (request.method =="GET") and (testc != 0):
              for x in range(len(testa)):
                  if str(testa[x].lesson_name)+"_cancel" in request.GET:
                     b=str(testa[x].lesson_name)
