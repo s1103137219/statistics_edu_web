@@ -39,7 +39,7 @@ def part1_synopsis(request,part=1,c=1):
 
 @login_required
 def part1(request,part=1,ch="1",num="1"):
-    webid="#code"
+    
     les="part%s_Ch1_synopsis"%(part)
     les_course=setuser(request)
     les_c=les_course.find(les)
@@ -53,7 +53,7 @@ def part1(request,part=1,ch="1",num="1"):
     with connection.cursor() as cursor:
          cursor.execute('SELECT * FROM htmlapp_course_user WHERE user_id=%s and coursename=%s',[request.user.id,coname])
          row = cursor.fetchone()
-    br=bool(row)
+    
     
     #如果存在先更新資料 不存在回傳空值 到 POST 判斷
     if bool(row) ==True:

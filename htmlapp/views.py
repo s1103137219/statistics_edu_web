@@ -114,7 +114,6 @@ def register(request):
 
            acc_confirm = 0
            email_confirm = 0
-           bool_register=''
            utest=User.objects.all()
            user_acc=[utest[x].username for x in range(len(utest))]
           
@@ -171,7 +170,7 @@ def setting(request):
 
 @login_required
 def course(request):
-    bb= "test"
+    
     
     if request.method =='GET':
         lesson=course4_attribute.objects.all()
@@ -197,7 +196,6 @@ def course(request):
 
 @login_required
 def user(request):
-    lan=""
 
     lesson=course4_attribute.objects.filter(user_id=str(request.user.id)).order_by('id')
     a=[lesson[x].id for x in range(len(lesson)) ]
