@@ -110,10 +110,8 @@ def change_password(request):
 def register(request):
     user_email=User.objects.all()
     
-    if request.method == 'GET':
-       
-       
-       if 'confirm' in request.GET:
+    if request.method == 'GET' && 'confirm' in request.GET:
+
            acc_confirm = 0
            email_confirm = 0
            bool_register=''
@@ -156,8 +154,7 @@ def setting(request):
        test=course4_attribute.objects.filter(user_id=str(request.user.id))
        testa=[x for x in test]
        testc=len(testa)
-       if request.method =="GET":
-          if testc != 0:
+       if request.method =="GET" && testc != 0:
              for x in range(len(testa)):
                  if str(testa[x].lesson_name)+"_cancel" in request.GET:
                     b=str(testa[x].lesson_name)
@@ -228,11 +225,6 @@ def user(request):
                 tct.append({"課程":tc[y]['課程'],"百分比":(round(round(tc[y]['課程答對數']/tt[x]['課程數量'],4)*100,2))})
            
 
-    #cs =[cs[x]['dcount'] for x in range(len(cs)) ]
-    
-    #pr=[(round(cs[x]/tcourse[x],2)*100) for x in range(len(cs)) ]
-    
-    #schedule=dict(zip(a,pr))
      
     with connection.cursor() as cursor:
          cursor.execute('SELECT count(coursename) FROM htmlapp_course_user WHERE user_id=%s and correct=%s group by lesson_id',[request.user.id,True])
