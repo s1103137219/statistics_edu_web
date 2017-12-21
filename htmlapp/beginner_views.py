@@ -17,7 +17,6 @@ def python_beginner(request,part="1",ch="1"):
 @login_required
 def beginner_course(request,part="1",ch="1",num="1"):
         
-    #webid="#code"
     les="python_beginner%s_Ch1_synopsis"%(part)
     les_course=setuser(request)
     les_c=les_course.find(les)
@@ -30,7 +29,6 @@ def beginner_course(request,part="1",ch="1",num="1"):
     with connection.cursor() as cursor:
          cursor.execute('SELECT * FROM htmlapp_course_user WHERE user_id=%s and coursename=%s',[request.user.id,coname])
          row = cursor.fetchone()
-    #br=bool(row)
     
     #如果存在先更新資料 不存在回傳空值 到 POST 判斷
     if bool(row) ==True:
@@ -63,8 +61,7 @@ def beginner_course(request,part="1",ch="1",num="1"):
         # 是pyplot 有無使用 "find" 查詢 pyplot在不在
         tf=tes.find('plt')
 
-        #iferror=['def','if','for','while']
-        #tx=len(tes)
+        
         
         #如果在 加入 引用圖形的 .use('agg')
         if tf >= 0:
